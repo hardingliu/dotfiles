@@ -13,6 +13,7 @@ fi
 # Customize to your needs...
 # alias mvim='/Applications/MacVim.app/Contents/bin/mvim'
 alias pip='pip2'
+alias ls='ls --group-directories-first --color=auto --classify'
 
 # Load pip completion
 if (( $#commands[(i)pip(|[23])] )); then

@@ -77,7 +77,8 @@ if has('gui_running')
     set guifont=Monaco:h12
 endif
 
-colorscheme solarized
+set termguicolors
+colorscheme Tomorrow-Night-Eighties
 
 " clang-format
 map <C-K> :py3f /usr/local/Cellar/clang-format/2017-11-14/share/clang/clang-format.py<cr>
