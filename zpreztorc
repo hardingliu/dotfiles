@@ -29,6 +29,7 @@ zstyle ':prezto:load' pmodule \
   'editor' \
   'history' \
   'directory' \
+  'python' \
   'spectrum' \
   'gnu-utility' \
   'utility' \
@@ -172,10 +173,10 @@ zstyle ':prezto:module:syntax-highlighting' highlighters \
   'root'
 #
 # Set syntax highlighting styles.
-# zstyle ':prezto:module:syntax-highlighting' styles \
-#   'builtin' 'bg=blue' \
-#   'command' 'bg=blue' \
-#   'function' 'bg=blue'
+zstyle ':prezto:module:syntax-highlighting' styles \
+  'suffix-alias' 'fg=green,bold,underline' \
+  'precommand' 'fg=green,bold,underline' \
+  'arg0' 'fg=green,bold'
 #
 # Set syntax pattern styles.
 zstyle ':prezto:module:syntax-highlighting' pattern \

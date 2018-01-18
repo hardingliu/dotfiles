@@ -18,7 +18,7 @@ Plug 'w0rp/ale'
 
 Plug 'vim-airline/vim-airline'
 
-" Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline-themes'
 
 " colorschemes
 Plug 'morhetz/gruvbox'
@@ -28,12 +28,6 @@ Plug 'icymind/NeoSolarized'
 Plug 'NLKNguyen/papercolor-theme'
 
 Plug 'w0ng/vim-hybrid'
-
-Plug 'chriskempson/base16-vim'
-
-Plug 'junegunn/seoul256.vim'
-
-Plug 'nanotech/jellybeans.vim'
 
 Plug 'altercation/vim-colors-solarized'
 
@@ -78,7 +72,7 @@ if has('gui_running')
 endif
 
 set termguicolors
-colorscheme Tomorrow-Night-Eighties
+colorscheme molokai
 
 " clang-format
 map <C-K> :py3f /usr/local/Cellar/clang-format/2017-11-14/share/clang/clang-format.py<cr>
