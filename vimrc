@@ -18,8 +18,6 @@ Plug 'w0rp/ale'
 
 Plug 'vim-airline/vim-airline'
 
-Plug 'vim-airline/vim-airline-themes'
-
 " colorschemes
 Plug 'morhetz/gruvbox'
 
@@ -68,11 +66,14 @@ if has('gui_running')
     set guioptions-=r
     set guioptions+=m
     set guioptions+=T
-    set guifont=Monaco:h12
+    set guifont=Monaco:h11
 endif
 
-set termguicolors
-colorscheme molokai
+" set termguicolors
+" let g:gruvbox_contrast_dark='hard'
+" colorscheme gruvbox
+
+colo solarized
 
 " clang-format
 map <C-K> :py3f /usr/local/Cellar/clang-format/2017-11-14/share/clang/clang-format.py<cr>
