@@ -4,7 +4,7 @@ set nocompatible
 " Vim-plug
 call plug#begin('~/.vim/plugged')
 
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree'
 
 Plug 'leafgarland/typescript-vim'
 
@@ -66,14 +66,17 @@ if has('gui_running')
     set guioptions-=r
     set guioptions+=m
     set guioptions+=T
-    set guifont=Monaco:h11
+    set guifont=Inconsolata:h13
 endif
 
+" colorscheme settings
+colorscheme solarized
+
+" settings for gruvbox colorscheme
 " set termguicolors
 " let g:gruvbox_contrast_dark='hard'
 " colorscheme gruvbox
 
-colo solarized
 
 " clang-format
 map <C-K> :py3f /usr/local/Cellar/clang-format/2017-11-14/share/clang/clang-format.py<cr>
