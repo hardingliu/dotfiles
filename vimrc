@@ -66,29 +66,21 @@ if has('gui_running')
     set guioptions-=r
     set guioptions+=m
     set guioptions+=T
-    set guifont=Inconsolata:h13
+    set guifont=Inconsolata:h14
 endif
 
 " colorscheme settings
-colorscheme solarized
+" colorscheme solarized
 
 " settings for gruvbox colorscheme
-" set termguicolors
-" let g:gruvbox_contrast_dark='hard'
-" colorscheme gruvbox
-
-
-" clang-format
-map <C-K> :py3f /usr/local/Cellar/clang-format/2017-11-14/share/clang/clang-format.py<cr>
-
-" yapf
-map <C-Y> :call yapf#YAPF()<cr>
-imap <C-Y> <c-o>:call yapf#YAPF()<cr>
+set termguicolors
+let g:gruvbox_contrast_dark='hard'
+colorscheme gruvbox
 
 " remove trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
-" Put these lines at the very end of your vimrc file.
+" Put these lines at the very end of your vimrc file, for ale.
 
 " Load all plugins now.
 " Plugins need to be added to runtimepath before helptags can be generated.
