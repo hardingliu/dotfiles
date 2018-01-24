@@ -13,7 +13,7 @@ fi
 # Customize to your needs...
 # alias mvim='/Applications/MacVim.app/Contents/bin/mvim'
 alias pip='pip2'
-alias ls='ls --group-directories-first --color=auto --classify'
+# alias ls='ls --group-directories-first --color=auto --classify'
 
 # Display dots when waiting for tab completion
 expand-or-complete-with-dots() {
