@@ -16,9 +16,7 @@ Plug 'jiangmiao/auto-pairs'
 
 Plug 'w0rp/ale'
 
-Plug 'vim-airline/vim-airline'
-
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 
 " colorschemes
 Plug 'morhetz/gruvbox'
