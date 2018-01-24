@@ -33,6 +33,11 @@ Plug 'tomasr/molokai'
 
 call plug#end()
 
+
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ }
+
 " general settings
 filetype plugin indent on
 set backspace=indent,eol,start
@@ -76,7 +81,6 @@ colorscheme solarized
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 " Put these lines at the very end of your vimrc file, for ale.
-
 " Load all plugins now.
 " Plugins need to be added to runtimepath before helptags can be generated.
 packloadall
