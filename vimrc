@@ -8,15 +8,13 @@ Plug 'scrooloose/nerdtree'
 
 Plug 'leafgarland/typescript-vim'
 
-Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
-
 Plug 'tpope/vim-fugitive'
 
 Plug 'jiangmiao/auto-pairs'
 
 Plug 'w0rp/ale'
 
-Plug 'itchyny/lightline.vim'
+Plug 'vim-airline/vim-airline'
 
 " colorschemes
 Plug 'morhetz/gruvbox'
@@ -31,12 +29,10 @@ Plug 'altercation/vim-colors-solarized'
 
 Plug 'tomasr/molokai'
 
+Plug 'chriskempson/base16-vim'
+
 call plug#end()
 
-
-let g:lightline = {
-      \ 'colorscheme': 'solarized',
-      \ }
 
 " general settings
 filetype plugin indent on
@@ -64,18 +60,13 @@ set fileencoding=utf-8
 set background=dark
 syntax on
 
-" MacVim settings
-if has('gui_running')
-    set cursorline
-    set guioptions-=L
-    set guioptions-=r
-    set guioptions+=m
-    set guioptions+=T
-    set guifont=Inconsolata:h13
-endif
+colo solarized
 
-" colorscheme settings
-colorscheme solarized
+"let g:gruvbox_bold=0
+"let g:gruvbox_italic=0
+"let g:gruvbox_contrast_dark='hard'
+"let g:gruvbox_invert_selection=0
+"colo gruvbox
 
 " remove trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>

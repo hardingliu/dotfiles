@@ -28,10 +28,11 @@ zstyle ':prezto:load' pmodule \
   'terminal' \
   'editor' \
   'history' \
+  'git' \
+  'gnu-utility' \
   'directory' \
   'python' \
   'spectrum' \
-  'gnu-utility' \
   'utility' \
   'completion' \
   'syntax-highlighting' \
@@ -113,7 +114,7 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 # Set the prompt theme to load.
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
-zstyle ':prezto:module:prompt' theme 'pure'
+zstyle ':prezto:module:prompt' theme 'sorin'
 
 # Set the working directory prompt display length.
 # By default, it is set to 'short'. Set it to 'long' (without '~' expansion)
@@ -173,10 +174,10 @@ zstyle ':prezto:module:syntax-highlighting' highlighters \
   'root'
 #
 # Set syntax highlighting styles.
-# zstyle ':prezto:module:syntax-highlighting' styles \
-#   'suffix-alias' 'fg=green,bold,underline' \
-#   'precommand' 'fg=green,bold,underline' \
-#   'arg0' 'fg=green,bold'
+zstyle ':prezto:module:syntax-highlighting' styles \
+  'suffix-alias' 'fg=green,bold,underline' \
+  'precommand' 'fg=green,bold,underline' \
+  'arg0' 'fg=green,bold'
 #
 # Set syntax pattern styles.
 zstyle ':prezto:module:syntax-highlighting' pattern \
