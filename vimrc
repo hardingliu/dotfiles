@@ -63,7 +63,7 @@ syntax on
 set termguicolors
 colo NeoSolarized
 
-let g:airline_powerline_fonts = 1
+"let g:airline_powerline_fonts = 1
 
 "let g:gruvbox_bold=0
 "let g:gruvbox_italic=0
