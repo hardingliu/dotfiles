@@ -12,8 +12,6 @@ fi
 
 # Customize to your needs...
 alias mvim='/Applications/MacVim.app/Contents/bin/mvim'
-alias pip='pip2'
-export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 # Config for zsh-syntax-highlighting
 #

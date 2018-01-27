@@ -16,6 +16,8 @@ Plug 'w0rp/ale'
 
 Plug 'vim-airline/vim-airline'
 
+Plug 'vim-airline/vim-airline-themes'
+
 " colorschemes
 Plug 'morhetz/gruvbox'
 
@@ -28,8 +30,6 @@ Plug 'w0ng/vim-hybrid'
 Plug 'altercation/vim-colors-solarized'
 
 Plug 'tomasr/molokai'
-
-Plug 'chriskempson/base16-vim'
 
 call plug#end()
 
@@ -60,7 +60,10 @@ set fileencoding=utf-8
 set background=dark
 syntax on
 
-colo solarized
+set termguicolors
+colo NeoSolarized
+
+let g:airline_powerline_fonts = 1
 
 "let g:gruvbox_bold=0
 "let g:gruvbox_italic=0
