@@ -64,4 +64,4 @@ fi
 
 # Added by zongming
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-export JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_HOME=`/usr/libexec/java_home`
