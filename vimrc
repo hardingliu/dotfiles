@@ -60,8 +60,8 @@ set fileencoding=utf-8
 set background=dark
 syntax on
 
-set termguicolors
-colo NeoSolarized
+" set termguicolors
+colo solarized
 
 "let g:airline_powerline_fonts = 1
 
