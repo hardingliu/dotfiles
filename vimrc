@@ -31,8 +31,9 @@ Plug 'altercation/vim-colors-solarized'
 
 Plug 'tomasr/molokai'
 
-call plug#end()
+Plug 'chriskempson/base16-vim'
 
+call plug#end()
 
 " general settings
 filetype plugin indent on
@@ -58,18 +59,11 @@ set nolist
 set encoding=utf-8
 set fileencoding=utf-8
 set background=dark
+set termguicolors
 syntax on
 
-" set termguicolors
-colo solarized
-
-"let g:airline_powerline_fonts = 1
-
-"let g:gruvbox_bold=0
-"let g:gruvbox_italic=0
-"let g:gruvbox_contrast_dark='hard'
-"let g:gruvbox_invert_selection=0
-"colo gruvbox
+" colorscheme setting
+colorscheme base16-spacemacs
 
 " remove trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>

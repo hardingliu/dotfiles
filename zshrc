@@ -12,9 +12,4 @@ fi
 
 # Customize to your needs...
 alias mvim='/Applications/MacVim.app/Contents/bin/mvim'
-
-# Config for zsh-syntax-highlighting
-#
-# source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
-# ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=white,bold,bg=red')
+alias vscode='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code'
