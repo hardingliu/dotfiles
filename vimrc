@@ -16,16 +16,12 @@ Plug 'w0rp/ale'
 
 Plug 'vim-airline/vim-airline'
 
-Plug 'vim-airline/vim-airline-themes'
+"Plug 'vim-airline/vim-airline-themes'
 
 " colorschemes
 Plug 'morhetz/gruvbox'
 
 Plug 'icymind/NeoSolarized'
-
-Plug 'NLKNguyen/papercolor-theme'
-
-Plug 'w0ng/vim-hybrid'
 
 Plug 'altercation/vim-colors-solarized'
 
