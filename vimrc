@@ -16,7 +16,7 @@ Plug 'w0rp/ale'
 
 Plug 'vim-airline/vim-airline'
 
-"Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline-themes'
 
 " colorschemes
 Plug 'morhetz/gruvbox'
@@ -28,6 +28,8 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'tomasr/molokai'
 
 Plug 'chriskempson/base16-vim'
+
+Plug 'itchyny/landscape.vim'
 
 call plug#end()
 
@@ -59,7 +61,7 @@ set termguicolors
 syntax on
 
 " colorscheme setting
-colorscheme base16-spacemacs
+colorscheme base16-solarized-dark
 
 " remove trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>

@@ -12,4 +12,3 @@ fi
 
 # Customize to your needs...
 alias mvim='/Applications/MacVim.app/Contents/bin/mvim'
-alias vscode='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code'
