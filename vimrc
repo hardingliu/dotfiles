@@ -21,8 +21,6 @@ Plug 'vim-airline/vim-airline-themes'
 " colorschemes
 Plug 'morhetz/gruvbox'
 
-Plug 'icymind/NeoSolarized'
-
 Plug 'altercation/vim-colors-solarized'
 
 Plug 'tomasr/molokai'
@@ -61,7 +59,8 @@ set termguicolors
 syntax on
 
 " colorscheme setting
-colorscheme base16-solarized-dark
+let g:gruvbox_contrast_dark="hard"
+colorscheme gruvbox
 
 " remove trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
