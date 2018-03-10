@@ -59,8 +59,7 @@ set termguicolors
 syntax on
 
 " colorscheme setting
-let g:gruvbox_contrast_dark="hard"
-colorscheme gruvbox
+colorscheme base16-classic-dark
 
 " remove trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
