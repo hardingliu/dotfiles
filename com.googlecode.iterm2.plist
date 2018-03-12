@@ -836,7 +836,7 @@
 	<key>NSFontPanelSizeSliderParams</key>
 	<string>2 0 100</string>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/Library/Mobile Documents/com~apple~CloudDocs/config</string>
+	<string>~/Public</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{712, 448}</string>
 	<key>NSNavPanelExpandedSizeForSaveMode</key>
@@ -889,7 +889,7 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 76 599 519 0 0 1280 778 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>189 241 796 473 0 0 1280 778 </string>
+	<string>189 241 796 473 0 0 1280 800 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>396 251 570 450 0 0 1280 778 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -1676,7 +1676,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/zongming/.iterm2</string>
+	<string>/Users/zongming/.dotfiles</string>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
