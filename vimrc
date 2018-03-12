@@ -25,8 +25,6 @@ Plug 'altercation/vim-colors-solarized'
 
 Plug 'tomasr/molokai'
 
-Plug 'chriskempson/base16-vim'
-
 Plug 'itchyny/landscape.vim'
 
 call plug#end()
@@ -59,7 +57,12 @@ set termguicolors
 syntax on
 
 " colorscheme setting
-colorscheme base16-classic-dark
+let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_bold='0'
+let g:gruvbox_italic='0'
+let g:gruvbox_underline='0'
+let g:gruvbox_undercurl='0'
+colorscheme gruvbox
 
 " remove trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
