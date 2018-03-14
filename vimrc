@@ -4,7 +4,7 @@ set nocompatible
 " Vim-plug
 call plug#begin('~/.vim/plugged')
 
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
 Plug 'leafgarland/typescript-vim'
 
@@ -26,6 +26,8 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'tomasr/molokai'
 
 Plug 'itchyny/landscape.vim'
+
+Plug 'junegunn/seoul256.vim'
 
 call plug#end()
 
@@ -56,12 +58,7 @@ set background=dark
 syntax on
 
 " colorscheme setting
-let g:gruvbox_contrast_dark='hard'
-let g:gruvbox_bold='0'
-let g:gruvbox_italic='0'
-let g:gruvbox_underline='0'
-let g:gruvbox_undercurl='0'
-colorscheme gruvbox
+colorscheme molokai
 
 " change cursor shape in different modes
 let &t_SI.="\e[5 q"
