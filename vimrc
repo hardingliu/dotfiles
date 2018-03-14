@@ -53,7 +53,6 @@ set nolist
 set encoding=utf-8
 set fileencoding=utf-8
 set background=dark
-set termguicolors
 syntax on
 
 " colorscheme setting
@@ -63,6 +62,10 @@ let g:gruvbox_italic='0'
 let g:gruvbox_underline='0'
 let g:gruvbox_undercurl='0'
 colorscheme gruvbox
+
+" change cursor shape in different modes
+let &t_SI.="\e[5 q"
+let &t_EI.="\e[1 q"
 
 " remove trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
