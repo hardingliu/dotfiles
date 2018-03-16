@@ -104,6 +104,7 @@ function prompt_zongming_precmd {
     python-info
   fi
 
+  # credit to sorin - https://github.com/robbyrussell/oh-my-zsh/pull/522
   # Sets the tab and window titles before the prompt is displayed.
   if [[ "$TERM_PROGRAM" != "Apple_Terminal" ]] && check-bool "$AUTO_TITLE"; then
     set-window-title "${(%):-%~}"
@@ -115,6 +116,7 @@ function prompt_zongming_precmd {
     # Set Apple Terminal current working directory.
     printf '\e]7;%s\a' "file://$HOST${PWD// /%20}"
   fi
+  # credit to sorin - https://github.com/robbyrussell/oh-my-zsh/pull/522
 
   prompt_zongming_async_tasks
 }
