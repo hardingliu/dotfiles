@@ -16,8 +16,6 @@ Plug 'w0rp/ale'
 
 Plug 'vim-airline/vim-airline'
 
-Plug 'vim-airline/vim-airline-themes'
-
 " colorschemes
 Plug 'morhetz/gruvbox'
 
@@ -58,14 +56,16 @@ set background=dark
 syntax on
 
 " colorscheme setting
+let g:molokai_original = 1
 colorscheme molokai
-
-" change cursor shape in different modes
-let &t_SI.="\e[5 q"
-let &t_EI.="\e[1 q"
 
 " remove trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+
+" let ale use pycodestyle as the python linter
+let g:ale_linters = {
+\   'python': ['pycodestyle'],
+\}
 
 " Put these lines at the very end of your vimrc file, for ale.
 " Load all plugins now.

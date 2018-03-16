@@ -186,7 +186,7 @@ zstyle ':prezto:module:syntax-highlighting' styles \
   'dollar-double-quoted-argument' 'fg=cyan,bold' \
   'back-double-quoted-argument' 'fg=cyan,bold' \
   'back-dollar-quoted-argument' 'fg=cyan,bold' \
-  'comment' 'fg=black,bold'
+  'comment' 'fg=white'
 
 # Set syntax pattern styles.
 zstyle ':prezto:module:syntax-highlighting' pattern \
