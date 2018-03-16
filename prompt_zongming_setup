@@ -33,9 +33,9 @@
 # Load dependencies.
 pmodload 'helper'
 
-function prompt_zliu_async_callback {
+function prompt_zongming_async_callback {
   case $1 in
-    prompt_zliu_async_git)
+    prompt_zongming_async_git)
       # We can safely split on ':' because it isn't allowed in ref names.
       IFS=':' read _git_target _git_post_target <<<"$3"
 
@@ -45,20 +45,20 @@ function prompt_zliu_async_callback {
 
       if [[ -z "$_git_target" ]]; then
         # No git target detected, flush the git fragment and redisplay the prompt.
-        if [[ -n "$_prompt_zliu_git" ]]; then
-          _prompt_zliu_git=''
+        if [[ -n "$_prompt_zongming_git" ]]; then
+          _prompt_zongming_git=''
           zle && zle reset-prompt
         fi
       else
         # Git target detected, update the git fragment and redisplay the prompt.
-        _prompt_zliu_git="${_git_target}${_git_post_target}"
+        _prompt_zongming_git="${_git_target}${_git_post_target}"
         zle && zle reset-prompt
       fi
       ;;
   esac
 }
 
-function prompt_zliu_async_git {
+function prompt_zongming_async_git {
   cd -q "$1"
   if (( $+functions[git-info] )); then
     git-info
@@ -66,36 +66,36 @@ function prompt_zliu_async_git {
   fi
 }
 
-function prompt_zliu_async_tasks {
+function prompt_zongming_async_tasks {
   # Initialize async worker. This needs to be done here and not in
-  # prompt_zliu_setup so the git formatting can be overridden by other prompts.
+  # prompt_zongming_setup so the git formatting can be overridden by other prompts.
   if (( !${prompt_prezto_async_init:-0} )); then
-    async_start_worker prompt_zliu -n
-    async_register_callback prompt_zliu prompt_zliu_async_callback
+    async_start_worker prompt_zongming -n
+    async_register_callback prompt_zongming prompt_zongming_async_callback
     typeset -g prompt_prezto_async_init=1
   fi
 
   # Kill the old process of slow commands if it is still running.
-  async_flush_jobs prompt_zliu
+  async_flush_jobs prompt_zongming
 
   # Compute slow commands in the background.
-  async_job prompt_zliu prompt_zliu_async_git "$PWD"
+  async_job prompt_zongming prompt_zongming_async_git "$PWD"
 }
 
-function prompt_zliu_precmd {
+function prompt_zongming_precmd {
   setopt LOCAL_OPTIONS
   unsetopt XTRACE KSH_ARRAYS
 
   # Format PWD.
-  _prompt_zliu_pwd=$(prompt-pwd)
+  _prompt_zongming_pwd=$(prompt-pwd)
 
   # Handle updating git data. We also clear the git prompt data if we're in a
   # different git root now.
   if (( $+functions[git-dir] )); then
     local new_git_root="$(git-dir 2> /dev/null)"
-    if [[ $new_git_root != $_zliu_cur_git_root ]]; then
-      _prompt_zliu_git=''
-      _zliu_cur_git_root=$new_git_root
+    if [[ $new_git_root != $_zongming_cur_git_root ]]; then
+      _prompt_zongming_git=''
+      _zongming_cur_git_root=$new_git_root
     fi
   fi
 
@@ -104,22 +104,22 @@ function prompt_zliu_precmd {
     python-info
   fi
 
-  prompt_zliu_async_tasks
+  prompt_zongming_async_tasks
 }
 
-function prompt_zliu_setup {
+function prompt_zongming_setup {
   setopt LOCAL_OPTIONS
   unsetopt XTRACE KSH_ARRAYS
   prompt_opts=(cr percent sp subst)
-  _prompt_zliu_precmd_async_pid=0
-  _prompt_zliu_precmd_async_data=$(mktemp "${TMPDIR:-/tmp}/zliu-prompt-async-XXXXXXXXXX")
+  _prompt_zongming_precmd_async_pid=0
+  _prompt_zongming_precmd_async_data=$(mktemp "${TMPDIR:-/tmp}/zongming-prompt-async-XXXXXXXXXX")
 
   # Load required functions.
   autoload -Uz add-zsh-hook
   autoload -Uz async && async
 
   # Add hook for calling git-info before each command.
-  add-zsh-hook precmd prompt_zliu_precmd
+  add-zsh-hook precmd prompt_zongming_precmd
 
   # Set editor-info parameters.
   zstyle ':prezto:module:editor:info:completing' format '%B%F{7}...%f%b'
@@ -155,26 +155,26 @@ function prompt_zliu_setup {
   zstyle ':prezto:module:python:info:virtualenv' format '%f%F{3}(%v)%F{7} '
 
   # Get the async worker set up
-  _zliu_cur_git_root=''
+  _zongming_cur_git_root=''
 
-  _prompt_zliu_git=''
-  _prompt_zliu_pwd=''
+  _prompt_zongming_git=''
+  _prompt_zongming_pwd=''
 
   # Define prompts.
-  PROMPT='${SSH_TTY:+"%F{9}%n%f%F{7}@%f%F{3}%m%f "}%B%F{4}${_prompt_zliu_pwd}%f%b%(!. %B%F{1}#%f%b.)${editor_info[keymap]} '
+  PROMPT='${SSH_TTY:+"%F{9}%n%f%F{7}@%f%F{3}%m%f "}%B%F{4}${_prompt_zongming_pwd}%f%b%(!. %B%F{1}#%f%b.)${editor_info[keymap]} '
   RPROMPT='$python_info[virtualenv]${editor_info[overwrite]}%(?:: %F{1}'
   RPROMPT+=${show_return}
-  RPROMPT+='%f)${VIM:+" %B%F{6}V%f%b"}${_prompt_zliu_git}'
+  RPROMPT+='%f)${VIM:+" %B%F{6}V%f%b"}${_prompt_zongming_git}'
   SPROMPT='zsh: correct %F{1}%R%f to %F{2}%r%f [nyae]? '
 }
 
-function prompt_zliu_preview {
+function prompt_zongming_preview {
   local +h PROMPT=''
   local +h RPROMPT=''
   local +h SPROMPT=''
 
   editor-info 2> /dev/null
-  prompt_preview_theme 'zliu'
+  prompt_preview_theme 'zongming'
 }
 
-prompt_zliu_setup "$@"
+prompt_zongming_setup "$@"
