@@ -56,7 +56,7 @@ set background=dark
 syntax on
 
 " colorscheme setting
-let g:molokai_original = 1
+" let g:molokai_original = 1
 colorscheme molokai
 
 " remove trailing whitespace by pressing F5
