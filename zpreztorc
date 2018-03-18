@@ -173,8 +173,9 @@ zstyle ':prezto:module:syntax-highlighting' highlighters \
 
 # Set syntax highlighting styles.
 zstyle ':prezto:module:syntax-highlighting' styles \
-  'suffix-alias' 'fg=green,bold,underline' \
-  'precommand' 'fg=green,bold,underline' \
+  'suffix-alias' 'fg=green,bold' \
+  'precommand' 'fg=green,bold' \
+  'path' '' \
   'arg0' 'fg=green,bold' \
   'reserved-word' 'fg=yellow,bold' \
   'globbing' 'fg=blue,bold' \
