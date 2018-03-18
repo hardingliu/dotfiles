@@ -31,7 +31,6 @@ zstyle ':prezto:load' pmodule \
   'spectrum' \
   'python' \
   'git' \
-  'gnu-utility' \
   'utility' \
   'completion' \
   'syntax-highlighting' \
