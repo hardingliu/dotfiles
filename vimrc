@@ -53,10 +53,10 @@ set nolist
 set encoding=utf-8
 set fileencoding=utf-8
 set background=dark
+set termguicolors
 syntax on
 
 " colorscheme setting
-" let g:molokai_original = 1
 colorscheme molokai
 
 " remove trailing whitespace by pressing F5
