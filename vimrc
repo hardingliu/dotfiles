@@ -53,11 +53,11 @@ set nolist
 set encoding=utf-8
 set fileencoding=utf-8
 set background=dark
-set termguicolors
+" set termguicolors
 syntax on
 
 " colorscheme setting
-colorscheme molokai
+colorscheme solarized
 
 " remove trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
