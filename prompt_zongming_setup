@@ -107,10 +107,8 @@ function prompt_zongming_precmd {
   prompt_zongming_async_tasks
 
   if [[ "$TERM_PROGRAM" == "Apple_Terminal" ]] && [[ -z "$INSIDE_EMACS" ]]; then
-
     # Identify the directory using a "file:" scheme URL, including
     # the host name to disambiguate local vs. remote paths.
-
     # Percent-encode the pathname.
     local URL_PATH=''
     {
@@ -126,11 +124,8 @@ function prompt_zongming_precmd {
         fi
       done
     }
-
     local PWD_URL="file://$HOST$URL_PATH"
-    #echo "$PWD_URL"        # testing
     printf '\e]7;%s\a' "$PWD_URL"
-
   fi
 }
 
@@ -156,22 +151,10 @@ function prompt_zongming_setup {
 
   # Set git-info parameters.
   zstyle ':prezto:module:git:info' verbose 'yes'
-  zstyle ':prezto:module:git:info:action' format '%F{7}:%f%%B%F{9}%s%f%%b'
-  zstyle ':prezto:module:git:info:added' format ' %%B%F{2}✚%f%%b'
-  zstyle ':prezto:module:git:info:ahead' format ' %%B%F{13}⬆%f%%b'
-  zstyle ':prezto:module:git:info:behind' format ' %%B%F{13}⬇%f%%b'
-  zstyle ':prezto:module:git:info:branch' format ' %%B%F{2}%b%f%%b'
-  zstyle ':prezto:module:git:info:commit' format ' %%B%F{3}%.7c%f%%b'
-  zstyle ':prezto:module:git:info:deleted' format ' %%B%F{1}✖%f%%b'
-  zstyle ':prezto:module:git:info:modified' format ' %%B%F{4}✱%f%%b'
-  zstyle ':prezto:module:git:info:position' format ' %%B%F{13}%p%f%%b'
-  zstyle ':prezto:module:git:info:renamed' format ' %%B%F{5}➜%f%%b'
-  zstyle ':prezto:module:git:info:stashed' format ' %%B%F{6}✭%f%%b'
-  zstyle ':prezto:module:git:info:unmerged' format ' %%B%F{3}═%f%%b'
-  zstyle ':prezto:module:git:info:untracked' format ' %%B%F{7}❖%f%%b'
+  zstyle ':prezto:module:git:info:branch' format "%%B%F{2}%b%f%%b"
+  zstyle ':prezto:module:git:info:dirty' format "%%B%F{6}*%f%%b"
   zstyle ':prezto:module:git:info:keys' format \
-    'status' '%b %p %c:%s%A%B%S%a%d%m%r%U%u'
-
+    'status' '%b:%D'
   # Set up non-zero return value display
   local show_return="✘ "
   # Default is to show the return value
