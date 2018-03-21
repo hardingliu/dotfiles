@@ -150,7 +150,7 @@ function prompt_zongming_setup {
   # Set git-info parameters.
   zstyle ':prezto:module:git:info' verbose 'yes'
   zstyle ':prezto:module:git:info:branch' format '%%B%F{4}%b%f%%b'
-  zstyle ':prezto:module:git:info:dirty' format '%%B%F{242}*%f%%b'
+  zstyle ':prezto:module:git:info:dirty' format '%%B%F{1}*%f%%b'
   zstyle ':prezto:module:git:info:ahead' format ' %%B%F{6}⇡%f%%b'
   zstyle ':prezto:module:git:info:behind' format ' %%B%F{6}⇣%f%%B'
   zstyle ':prezto:module:git:info:keys' format \
