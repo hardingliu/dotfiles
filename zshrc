@@ -12,4 +12,3 @@ fi
 
 # Customize to your needs...
 alias nyancat='nyancat --no-title'
-PURE_PROMPT_SYMBOL='>'
