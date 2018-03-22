@@ -172,9 +172,9 @@ function prompt_zongming_setup {
 
   # Define prompts.
   PROMPT='${SSH_TTY:+"%F{9}%n%f%F{7}@%f%F{3}%m%f "}%B%F{4}${_prompt_zongming_pwd}%f%b%(!. %B%F{1}#%f%b.)${editor_info[keymap]} '
-  RPROMPT='$python_info[virtualenv]${editor_info[overwrite]}%(?:: %F{1}'
+  RPROMPT='$python_info[virtualenv]%(?:: %F{1}'
   RPROMPT+=${show_return}
-  RPROMPT+='%f)${VIM:+" %B%F{6}V%f%b"}${_prompt_zongming_git}'
+  RPROMPT+='%f)${_prompt_zongming_git}'
   SPROMPT='zsh: correct %F{1}%R%f to %F{2}%r%f [nyae]? '
 }
 
