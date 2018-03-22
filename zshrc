@@ -12,3 +12,6 @@ fi
 
 # Customize to your needs...
 alias nyancat='nyancat --no-title'
+# For brew command-not-found
+# if brew command command-not-found-init > /dev/null 2>&1; then eval "$(brew command-not-found-init)"; fi
+source /usr/local/Homebrew/Library/Taps/homebrew/homebrew-command-not-found/handler.sh
