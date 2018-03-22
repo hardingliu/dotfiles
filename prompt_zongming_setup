@@ -145,7 +145,7 @@ function prompt_zongming_setup {
 
   # Set editor-info parameters.
   zstyle ':prezto:module:editor:info:completing' format '%B%F{7}...%f%b'
-  zstyle ':prezto:module:editor:info:keymap:primary' format ' %B%F{5}❯%f%b'
+  zstyle ':prezto:module:editor:info:keymap:primary' format ' %B%F{5}$%f%b'
 
   # Set git-info parameters.
   zstyle ':prezto:module:git:info' verbose 'yes'
@@ -171,7 +171,7 @@ function prompt_zongming_setup {
   _prompt_zongming_pwd=''
 
   # Define prompts.
-  PROMPT='${SSH_TTY:+"%F{9}%n%f%F{7}@%f%F{3}%m%f "}%B%F{4}${_prompt_zongming_pwd}%f%b%(!. %B%F{1}#%f%b.)${editor_info[keymap]} '
+  PROMPT='${SSH_TTY:+"%F{9}%n%f%F{7}@%f%F{3}%m%f "}%B%F{4}${_prompt_zongming_pwd}%f%b%(!. %B%F{1}#%f%b.${editor_info[keymap]}) '
   RPROMPT='$python_info[virtualenv]%(?:: %F{1}'
   RPROMPT+=${show_return}
   RPROMPT+='%f)${_prompt_zongming_git}'
