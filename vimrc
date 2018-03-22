@@ -23,8 +23,6 @@ Plug 'altercation/vim-colors-solarized'
 
 Plug 'tomasr/molokai'
 
-Plug 'itchyny/landscape.vim'
-
 Plug 'junegunn/seoul256.vim'
 
 call plug#end()
@@ -57,7 +55,13 @@ set background=dark
 syntax on
 
 " colorscheme setting
-colorscheme solarized
+"let g:airline_theme='dark'
+"let g:gruvbox_termcolors=16
+"colorscheme gruvbox
+if !has('gui_running')
+    let g:molokai_original = 1
+endif
+colorscheme molokai
 
 " remove trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
