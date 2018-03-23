@@ -34,7 +34,6 @@ zstyle ':prezto:load' pmodule \
   'gnu-utility' \
   'utility' \
   'completion' \
-  'syntax-highlighting' \
   'prompt'
 
 #
@@ -164,34 +163,34 @@ zstyle ':prezto:module:python:virtualenv' initialize 'yes'
 
 # Set syntax highlighters.
 # By default, only the main highlighter is enabled.
-zstyle ':prezto:module:syntax-highlighting' highlighters \
-  'main' \
-  'brackets' \
-  'pattern' \
-  'line' \
-  'cursor' \
-  'root'
+# zstyle ':prezto:module:syntax-highlighting' highlighters \
+#   'main' \
+#   'brackets' \
+#   'pattern' \
+#   'line' \
+#   'cursor' \
+#   'root'
 
 # Set syntax highlighting styles.
-zstyle ':prezto:module:syntax-highlighting' styles \
-  'suffix-alias' 'fg=green,bold' \
-  'precommand' 'fg=green,bold' \
-  'path' '' \
-  'arg0' 'fg=green,bold' \
-  'reserved-word' 'fg=yellow,bold' \
-  'globbing' 'fg=blue,bold' \
-  'history-expansion' 'fg=blue,bold' \
-  'single-quoted-argument' 'fg=yellow,bold' \
-  'double-quoted-argument' 'fg=yellow,bold' \
-  'dollar-quoted-argument' 'fg=yellow,bold' \
-  'dollar-double-quoted-argument' 'fg=cyan,bold' \
-  'back-double-quoted-argument' 'fg=cyan,bold' \
-  'back-dollar-quoted-argument' 'fg=cyan,bold' \
-  'comment' 'fg=white'
+# zstyle ':prezto:module:syntax-highlighting' styles \
+#   'suffix-alias' 'fg=green,bold' \
+#   'precommand' 'fg=green,bold' \
+#   'path' '' \
+#   'arg0' 'fg=green,bold' \
+#   'reserved-word' 'fg=yellow,bold' \
+#   'globbing' 'fg=blue,bold' \
+#   'history-expansion' 'fg=blue,bold' \
+#   'single-quoted-argument' 'fg=yellow,bold' \
+#   'double-quoted-argument' 'fg=yellow,bold' \
+#   'dollar-quoted-argument' 'fg=yellow,bold' \
+#   'dollar-double-quoted-argument' 'fg=cyan,bold' \
+#   'back-double-quoted-argument' 'fg=cyan,bold' \
+#   'back-dollar-quoted-argument' 'fg=cyan,bold' \
+#   'comment' 'fg=white'
 
 # Set syntax pattern styles.
-zstyle ':prezto:module:syntax-highlighting' pattern \
-  'rm*-rf*' 'fg=white,bold,bg=red'
+# zstyle ':prezto:module:syntax-highlighting' pattern \
+#   'rm*-rf*' 'fg=white,bold,bg=red'
 
 #
 # Terminal
