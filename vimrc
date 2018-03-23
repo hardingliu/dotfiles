@@ -57,9 +57,6 @@ set background=dark
 syntax on
 
 " colorscheme setting
-"let g:airline_theme='dark'
-"let g:gruvbox_termcolors=16
-"colorscheme gruvbox
 if !has('gui_running')
     let g:molokai_original = 1
 endif
