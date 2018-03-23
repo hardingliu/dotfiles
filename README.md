@@ -1,2 +1,2 @@
 # My dotfiles
-vimrc, zshrc, etc...
+vimrc, zshrc, etc... in Terminal.app
