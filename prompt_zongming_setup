@@ -148,12 +148,15 @@ function prompt_zongming_setup {
 
   # Set git-info parameters.
   zstyle ':prezto:module:git:info' verbose 'yes'
+  zstyle ':prezto:module:git:info:action' format '%F{7}:%f%%B%F{9}%s%f%%b'
   zstyle ':prezto:module:git:info:branch' format '%%B%F{242}%b%f%%b'
+  zstyle ':prezto:module:git:info:position' format '%%B%F{13}%p%f%%b'
+  zstyle ':prezto:module:git:info:commit' format '%%B%F{3}%.7c%f%%b'
   zstyle ':prezto:module:git:info:dirty' format '%%B%F{5}*%f%%b'
   zstyle ':prezto:module:git:info:ahead' format '%%B%F{6}⇡%f%%b'
   zstyle ':prezto:module:git:info:behind' format '%%B%F{6}⇣%f%%B'
   zstyle ':prezto:module:git:info:keys' format \
-    'status' '%b:%D%A%B'
+    'status' '%b %p %c:%s%D%A%B'
   # Set up non-zero return value display
   local show_return="✘ "
   # Default is to show the return value
