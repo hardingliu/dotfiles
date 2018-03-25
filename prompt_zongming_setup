@@ -149,12 +149,12 @@ function prompt_zongming_setup {
   # Set git-info parameters.
   zstyle ':prezto:module:git:info' verbose 'yes'
   zstyle ':prezto:module:git:info:action' format '%F{7}:%f%%B%F{9}%s%f%%b'
-  zstyle ':prezto:module:git:info:branch' format '%%B%F{4}%b%f%%b'
+  zstyle ':prezto:module:git:info:branch' format '%%B%F{6}%b%f%%b'
   zstyle ':prezto:module:git:info:position' format '%%B%F{13}%p%f%%b'
   zstyle ':prezto:module:git:info:commit' format '%%B%F{3}%.7c%f%%b'
   zstyle ':prezto:module:git:info:dirty' format '%%B%F{2}*%f%%b'
-  zstyle ':prezto:module:git:info:ahead' format '%%B%F{6}⇡%f%%b'
-  zstyle ':prezto:module:git:info:behind' format '%%B%F{6}⇣%f%%B'
+  zstyle ':prezto:module:git:info:ahead' format '%%B%F{4}⇡%f%%b'
+  zstyle ':prezto:module:git:info:behind' format '%%B%F{4}⇣%f%%B'
   zstyle ':prezto:module:git:info:keys' format \
     'status' '%b %p %c:%s%D%A%B'
   # Set up non-zero return value display
@@ -173,7 +173,7 @@ function prompt_zongming_setup {
   _prompt_zongming_pwd=''
 
   # Define prompts.
-  PROMPT='${SSH_TTY:+"%F{9}%n%f%F{7}@%f%F{3}%m%f "}%B%F{236}${_prompt_zongming_pwd}%f%b%(!. %B%F{1}#%f%b. %B%F{5}$%f%b) '
+  PROMPT='${SSH_TTY:+"%F{9}%n%f%F{7}@%f%F{3}%m%f "}%B%F{237}${_prompt_zongming_pwd}%f%b%(!. %B%F{1}#%f%b. %B%F{5}$%f%b) '
   RPROMPT='$python_info[virtualenv]%(?:: %F{1}'
   RPROMPT+=${show_return}
   RPROMPT+='%f)${_prompt_zongming_git}'
