@@ -27,6 +27,10 @@ Plug 'tomasr/molokai'
 
 Plug 'junegunn/seoul256.vim'
 
+Plug 'chriskempson/base16-vim'
+
+Plug 'NLKNguyen/papercolor-theme'
+
 call plug#end()
 
 " general settings
@@ -53,14 +57,9 @@ set nolist
 set encoding=utf-8
 set fileencoding=utf-8
 set background=dark
-" set termguicolors
 syntax on
 
-" colorscheme setting
-if !has('gui_running')
-    let g:molokai_original = 1
-endif
-colorscheme molokai
+colorscheme PaperColor
 
 " remove trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
