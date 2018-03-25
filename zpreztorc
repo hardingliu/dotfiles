@@ -16,22 +16,22 @@
 zstyle ':prezto:*:*' color 'yes'
 
 # Set the Zsh modules to load (man zshmodules).
-# zstyle ':prezto:load' zmodule 'attr' 'stat'
+zstyle ':prezto:load' zmodule 'attr' 'stat'
 
 # Set the Zsh functions to load (man zshcontrib).
-# zstyle ':prezto:load' zfunction 'zargs' 'zmv'
+zstyle ':prezto:load' zfunction 'zargs' 'zmv'
 
 # Set the Prezto modules to load (browse modules).
 # The order matters.
 zstyle ':prezto:load' pmodule \
   'environment' \
-  'editor' \
-  'history' \
-  'git' \
   'directory' \
-  'spectrum' \
-  'python' \
+  'editor' \
+  'git' \
   'gnu-utility' \
+  'history' \
+  'python' \
+  'spectrum' \
   'utility' \
   'completion' \
   'prompt'
@@ -62,7 +62,7 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 zstyle ':prezto:module:editor' dot-expansion 'yes'
 
 # Allow the zsh prompt context to be shown.
-zstyle ':prezto:module:editor' ps-context 'yes'
+# zstyle ':prezto:module:editor' ps-context 'yes'
 
 #
 # Git
