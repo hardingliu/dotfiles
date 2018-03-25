@@ -158,7 +158,7 @@ function prompt_zongming_setup {
   zstyle ':prezto:module:git:info:keys' format \
     'status' '%b %p %c:%s%D%A%B'
   # Set up non-zero return value display
-  local show_return="✘ "
+  local show_return=""
   # Default is to show the return value
   if zstyle -T ':prezto:module:prompt' show-return-val; then
     show_return+='%? '
