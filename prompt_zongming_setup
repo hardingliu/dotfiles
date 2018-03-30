@@ -89,6 +89,8 @@ function prompt_zongming_precmd {
   # Format PWD.
   _prompt_zongming_pwd=$(prompt-pwd)
 
+  prompt_zongming_async_tasks
+
   # Handle updating git data. We also clear the git prompt data if we're in a
   # different git root now.
   if (( $+functions[git-dir] )); then
@@ -125,8 +127,6 @@ function prompt_zongming_precmd {
     local PWD_URL="file://$HOST$URL_PATH"
     printf '\e]7;%s\a' "$PWD_URL"
   fi
-
-  prompt_zongming_async_tasks
 }
 
 function prompt_zongming_setup {
@@ -173,7 +173,7 @@ function prompt_zongming_setup {
   _prompt_zongming_pwd=''
 
   # Define prompts.
-  PROMPT='${SSH_TTY:+"%F{3}%n%f%F{7}@%f%F{9}%m%f "}%B%F{10}${_prompt_zongming_pwd}%f%b%(!. %B%F{1}#%f%b. %B%F{5}>%f%b) '
+  PROMPT='${SSH_TTY:+"%F{3}%n%f%F{7}@%f%F{9}%m%f "}%B%F{242}${_prompt_zongming_pwd}%f%b%(!. %B%F{1}#%f%b. %B%F{6}$%f%b) '
   RPROMPT='$python_info[virtualenv]%(?:: %F{1}'
   RPROMPT+=${show_return}
   RPROMPT+='%f)${_prompt_zongming_git}'
