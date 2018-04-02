@@ -89,23 +89,6 @@ function prompt_zongming_precmd {
   # Format PWD.
   _prompt_zongming_pwd=$(prompt-pwd)
 
-  prompt_zongming_async_tasks
-
-  # Handle updating git data. We also clear the git prompt data if we're in a
-  # different git root now.
-  if (( $+functions[git-dir] )); then
-    local new_git_root="$(git-dir 2> /dev/null)"
-    if [[ $new_git_root != $_zongming_cur_git_root ]]; then
-      _prompt_zongming_git=''
-      _zongming_cur_git_root=$new_git_root
-    fi
-  fi
-
-  # Run python info (this should be fast and not require any async)
-  if (( $+functions[python-info] )); then
-    python-info
-  fi
-
   if [[ "$TERM_PROGRAM" == "Apple_Terminal" ]] && [[ -z "$INSIDE_EMACS" ]]; then
     # Identify the directory using a "file:" scheme URL, including
     # the host name to disambiguate local vs. remote paths.
@@ -127,6 +110,23 @@ function prompt_zongming_precmd {
     local PWD_URL="file://$HOST$URL_PATH"
     printf '\e]7;%s\a' "$PWD_URL"
   fi
+
+  # Handle updating git data. We also clear the git prompt data if we're in a
+  # different git root now.
+  if (( $+functions[git-dir] )); then
+    local new_git_root="$(git-dir 2> /dev/null)"
+    if [[ $new_git_root != $_zongming_cur_git_root ]]; then
+      _prompt_zongming_git=''
+      _zongming_cur_git_root=$new_git_root
+    fi
+  fi
+
+  # Run python info (this should be fast and not require any async)
+  if (( $+functions[python-info] )); then
+    python-info
+  fi
+
+  prompt_zongming_async_tasks
 }
 
 function prompt_zongming_setup {
@@ -161,7 +161,7 @@ function prompt_zongming_setup {
   local show_return=""
   # Default is to show the return value
   if zstyle -T ':prezto:module:prompt' show-return-val; then
-    show_return+='%? '
+    show_return+='? '
   fi
   # Set python-info format
   zstyle ':prezto:module:python:info:virtualenv' format '%f%F{3}(%v)%F{7} '
@@ -173,7 +173,7 @@ function prompt_zongming_setup {
   _prompt_zongming_pwd=''
 
   # Define prompts.
-  PROMPT='${SSH_TTY:+"%F{3}%n%f%F{7}@%f%F{9}%m%f "}%B%F{242}${_prompt_zongming_pwd}%f%b%(!. %B%F{1}#%f%b. %B%F{6}$%f%b) '
+  PROMPT='${SSH_TTY:+"%F{3}%n%f%F{7}@%f%F{9}%m%f "}%B%F{242}${_prompt_zongming_pwd}%f%b%(!. %B%F{1}#%f%b. %B%F{5}%%%f%b) '
   RPROMPT='$python_info[virtualenv]%(?:: %F{1}'
   RPROMPT+=${show_return}
   RPROMPT+='%f)${_prompt_zongming_git}'
