@@ -43,7 +43,7 @@ typeset -gU cdpath fpath mailpath path
 
 # Set the list of directories that Zsh searches for programs.
 path=(
-  /usr/local/{opt/coreutils/libexec/gnubin,bin,sbin}
+  /usr/local/{bin,sbin}
   $path
 )
 
@@ -63,5 +63,5 @@ if (( $#commands[(i)lesspipe(|.sh)] )); then
 fi
 
 # Added by zongming
-export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+export PATH=$HOME/bin:$PATH
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
