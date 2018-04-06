@@ -151,10 +151,10 @@ function prompt_zl_setup {
   zstyle ':prezto:module:git:info:action' format '%F{7}:%f%F{9}(%s)%f'
   zstyle ':prezto:module:git:info:branch' format '%F{6}(%b)%f'
   zstyle ':prezto:module:git:info:position' format '%F{13}(%p)%f'
-  zstyle ':prezto:module:git:info:commit' format '%%B%F{3}%.7c%f%%b'
-  zstyle ':prezto:module:git:info:dirty' format '%%B%F{2}*%f%%b'
-  zstyle ':prezto:module:git:info:ahead' format '%%B%F{4}⇡%f%%b'
-  zstyle ':prezto:module:git:info:behind' format '%%B%F{4}⇣%f%%B'
+  zstyle ':prezto:module:git:info:commit' format '%F{3}%.7c%f'
+  zstyle ':prezto:module:git:info:dirty' format '%F{2}*%f'
+  zstyle ':prezto:module:git:info:ahead' format '%F{4}⇡%f'
+  zstyle ':prezto:module:git:info:behind' format '%F{4}⇣%f'
   zstyle ':prezto:module:git:info:keys' format \
     'status' '%b %p %c:%s%D%A%B'
 
@@ -168,7 +168,7 @@ function prompt_zl_setup {
   _prompt_zl_pwd=''
 
   # Define prompts.
-  PROMPT='%F{242}%c%f%(!.%B%F{1}#%f%b.%B%F{5}$%f%b) '
+  PROMPT='%F{242}%c%f%(!.%F{1}#%f.%F{5}$%f) '
   RPROMPT='%(?..%F{1}(%?%)%f)'
   RPROMPT+='$python_info[virtualenv]'
   RPROMPT+='${_prompt_zl_git}'
