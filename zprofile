@@ -65,6 +65,6 @@ fi
 # Added by zongming
 export PATH=$HOME/bin:$PATH
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
-export LSCOLORS="exfxcxdxbxeadaabagacad"
+export LSCOLORS="ExFxCxDxBxeadaabagacad"
 # export LSCOLORS="exfxcxdxbxgxhdabagacad"
 # export LSCOLORS="exgxfxdacxdadaachcaehe"
