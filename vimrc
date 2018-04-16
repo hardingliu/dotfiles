@@ -57,9 +57,12 @@ set nolist
 set encoding=utf-8
 set fileencoding=utf-8
 set background=dark
+"set t_md=
 syntax on
 
-colorscheme PaperColor
+let g:molokai_original = 1
+colorscheme molokai
+highlight Visual cterm=bold ctermbg=103 ctermfg=16
 
 " remove trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
