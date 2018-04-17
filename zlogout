@@ -9,10 +9,9 @@
 [[ -o INTERACTIVE && -t 2 ]] && {
 
 # Print the message.
-cat <<-EOF
+lolcat <<-EOF
 
-Thank you. Come again!
-  -- Dr. Apu Nahasapeemapetilon
+希望があるところには必ず試練があるものだから。
 EOF
 
 } >&2
