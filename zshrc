@@ -14,6 +14,7 @@ fi
 
 # For nyancat
 alias nyancat='nyancat --no-title'
+# alias ls='gls --color=auto --group-directories-first'
 
 # For brew command-not-found
 source /usr/local/Homebrew/Library/Taps/homebrew/homebrew-command-not-found/handler.sh
@@ -26,4 +27,4 @@ typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=green'
 ZSH_HIGHLIGHT_STYLES[precommand]='fg=green'
 ZSH_HIGHLIGHT_STYLES[path]=''
-ZSH_HIGHLIGHT_STYLES[comment]='fg=white'
+ZSH_HIGHLIGHT_STYLES[comment]='fg=black,bold'
