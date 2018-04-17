@@ -13,4 +13,3 @@
     zcompile "$zcompdump"
   fi
 } &!
-
