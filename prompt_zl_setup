@@ -168,7 +168,7 @@ function prompt_zl_setup {
   _prompt_zl_pwd=''
 
   # Define prompts.
-  PROMPT='%F{242}%c%f%(!.%F{1}#%f.%F{5}%%%f) '
+  PROMPT='%F{242}%c%f%(!.%B%F{1}#%f%b.%B%F{5}>%f%b) '
   RPROMPT='%(?..%F{1}(%?%)%f)'
   RPROMPT+='$python_info[virtualenv]'
   RPROMPT+='${_prompt_zl_git}'
