@@ -14,7 +14,7 @@ fi
 
 # For nyancat
 alias nyancat='nyancat --no-title'
-# alias ls='gls --color=auto --group-directories-first'
+alias ls='gls --color=auto --group-directories-first'
 
 # For brew command-not-found
 source /usr/local/Homebrew/Library/Taps/homebrew/homebrew-command-not-found/handler.sh
