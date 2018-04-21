@@ -1,7 +1,7 @@
 " Zongming's vimrc
 set nocompatible
 
-" Vim-plug
+" vim-plug
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
