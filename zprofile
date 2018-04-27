@@ -64,6 +64,7 @@ fi
 
 # Added by zongming
 export PATH=$HOME/bin:$PATH
+export GOPATH=$HOME/go
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 export LSCOLORS="ExFxCxDxBxeadaabagacad"
 export LS_COLORS="di=1;34:ln=1;35:so=1;32:pi=1;33:ex=1;31:bd=34;40:cd=33;40:su=30;41:sg=30;46:tw=30;42:ow=30;43"
