@@ -168,9 +168,9 @@ function prompt_zl_setup {
   _prompt_zl_pwd=''
 
   # Define prompts.
-  PROMPT='%(!.%F{1}#%f.%F{5}$%f) '
-  # RPROMPT='%(?..%F{1}(%?%)%f)(%F{6}%c%f)'
-  RPROMPT='%(?..%F{1}(%?%)%f)[%F{6}%(3~|.../%2~|%~)%f]'
+  # PROMPT='%F{8}%1~%f %(!.%F{1}#%f.%F{5}%%%f) '
+  PROMPT='%F{8}%(4~|%-1~/.../%1~|%~)%f %(!.%F{1}#%f.%F{5}%%%f) '
+  RPROMPT='%(?..%F{1}(%?%)%f)'
   RPROMPT+='$python_info[virtualenv]'
   RPROMPT+='${_prompt_zl_git}'
   SPROMPT='zsh: correct %F{1}%R%f to %F{2}%r%f [nyae]? '
