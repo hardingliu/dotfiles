@@ -10,8 +10,7 @@
 
 # Print the message.
 lolcat <<-EOF
-
-完璧な文章などといったものは存在しない。完璧な絶望が存在しないようにね。
+So we beat on, boats against the current, borne back ceaselessly into the past.
 EOF
 
 } >&2
