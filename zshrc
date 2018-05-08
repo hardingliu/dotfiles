@@ -13,7 +13,6 @@ fi
 # Customize to your needs...
 
 # For nyancat
-alias nyancat='nyancat --no-title'
 alias ls='gls --color=auto --group-directories-first'
 alias mvim='/Applications/MacVim.app/Contents/bin/mvim'
 
