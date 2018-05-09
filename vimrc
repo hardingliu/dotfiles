@@ -57,7 +57,6 @@ set nolist
 set encoding=utf-8
 set fileencoding=utf-8
 set background=dark
-"set t_md=
 syntax on
 
 let g:airline_theme='luna'
