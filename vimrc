@@ -72,8 +72,8 @@ let g:ale_linters = {
 \   'python': ['pycodestyle'],
 \}
 
-map <C-k> :pyf /usr/local/cellar/clang-format/2018-01-11/share/clang/clang-format.py<cr>
-imap <C-K> <c-o>:pyf /usr/local/cellar/clang-format/2018-01-11/share/clang/clang-format.py<cr>
+map <C-k> :py3f /usr/local/cellar/clang-format/2018-01-11/share/clang/clang-format.py<cr>
+imap <C-K> <c-o>:py3f /usr/local/cellar/clang-format/2018-01-11/share/clang/clang-format.py<cr>
 
 " Put these lines at the very end of your vimrc file, for ale.
 " Load all plugins now.
