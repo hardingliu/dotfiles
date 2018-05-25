@@ -12,7 +12,7 @@ fi
 
 # Customize to your needs...
 
-# For nyancat
+# Use gnu ls
 alias ls='gls --color=auto --group-directories-first'
 
 # For brew command-not-found
