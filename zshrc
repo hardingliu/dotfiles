@@ -14,6 +14,7 @@ fi
 
 # Use gnu ls
 alias ls='gls --color=auto --group-directories-first'
+unalias sl
 
 # For brew command-not-found
 source /usr/local/Homebrew/Library/Taps/homebrew/homebrew-command-not-found/handler.sh
