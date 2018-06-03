@@ -60,7 +60,6 @@ set background=dark
 syntax on
 
 let g:airline_theme='luna'
-let g:molokai_original = 1
 colorscheme molokai
 highlight Visual cterm=bold ctermbg=103 ctermfg=16
 
