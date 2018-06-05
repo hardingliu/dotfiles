@@ -197,7 +197,7 @@ function prompt_zl_setup {
   _prompt_zl_pwd=''
 
   # Define prompts.
-  PROMPT='%B%F{8}%(4~|%-1~/.../%1~|%~)%f%b %(!.%F{1}#%f.%F{5}>%f) '
+  PROMPT='%B%F{8}%(4~|%-1~/.../%1~|%~)%f%b %(!.%F{1}#%f.%F{5}❯%f) '
   RPROMPT='%(?..%F{1}[%?]%f)'
   RPROMPT+='${_prompt_zl_git}'
   SPROMPT='zsh: correct %F{1}%R%f to %F{2}%r%f [nyae]? '
