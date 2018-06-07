@@ -10,7 +10,7 @@
 
 # Print the message.
 lolcat <<-EOF
-So we beat on, boats against the current, borne back ceaselessly into the past.
+SUCCESS IS NOT FINAL, FAILURE IS NOT FATAL. IT IS THE COURAGE TO CONTINUE THAT COUNTS.
 EOF
 
 } >&2
