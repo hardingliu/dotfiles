@@ -9,8 +9,8 @@
 [[ -o INTERACTIVE && -t 2 ]] && {
 
 # Print the message.
-lolcat <<-EOF
-SUCCESS IS NOT FINAL, FAILURE IS NOT FATAL. IT IS THE COURAGE TO CONTINUE THAT COUNTS.
-EOF
+lolcat<<-EOF
 
+少抽烟，多喝水
+EOF
 } >&2
