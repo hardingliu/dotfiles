@@ -14,6 +14,8 @@ Plug 'jiangmiao/auto-pairs'
 
 Plug 'w0rp/ale'
 
+Plug 'rhysd/vim-clang-format'
+
 Plug 'vim-airline/vim-airline'
 
 Plug 'vim-airline/vim-airline-themes'
@@ -70,9 +72,6 @@ nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 let g:ale_linters = {
 \   'python': ['pycodestyle'],
 \}
-
-map <C-k> :py3f /usr/local/cellar/clang-format/2018-01-11/share/clang/clang-format.py<cr>
-imap <C-K> <c-o>:py3f /usr/local/cellar/clang-format/2018-01-11/share/clang/clang-format.py<cr>
 
 " Put these lines at the very end of your vimrc file, for ale.
 " Load all plugins now.
