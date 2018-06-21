@@ -10,7 +10,5 @@
 
 # Print the message.
 lolcat<<-EOF
-
-少抽烟，多喝水
 EOF
 } >&2
