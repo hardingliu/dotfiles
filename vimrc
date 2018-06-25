@@ -59,6 +59,7 @@ set nolist
 set encoding=utf-8
 set fileencoding=utf-8
 set background=dark
+set clipboard=unnamed
 syntax on
 
 let g:airline_theme='luna'
