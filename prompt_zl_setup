@@ -30,87 +30,91 @@
 # 15 bright white
 
 function update_terminal_cwd {
-  if [[ "$TERM_PROGRAM" == "Apple_Terminal" ]] && [[ -z "$INSIDE_EMACS" ]]; then
-    # Identify the directory using a "file:" scheme URL, including
-    # the host name to disambiguate local vs. remote paths.
-    # Percent-encode the pathname.
-    local URL_PATH=''
-    {
-      # Use LC_CTYPE=C to process text byte-by-byte.
-      local i ch hexch LC_CTYPE=C
-      for ((i = 1; i <= ${#PWD}; ++i)); do
-        ch="$PWD[i]"
-        if [[ "$ch" =~ [/._~A-Za-z0-9-] ]]; then
-          URL_PATH+="$ch"
-        else
-          hexch=$(printf "%02X" "'$ch")
-          URL_PATH+="%$hexch"
-        fi
-      done
-    }
-    local PWD_URL="file://$HOST$URL_PATH"
-    printf '\e]7;%s\a' "$PWD_URL"
-  fi
+    if [[ "$TERM_PROGRAM" == "Apple_Terminal" ]] && [[ -z "$INSIDE_EMACS" ]]; then
+        # Identify the directory using a "file:" scheme URL, including
+        # the host name to disambiguate local vs. remote paths.
+        # Percent-encode the pathname.
+        local URL_PATH=''
+        {
+            # Use LC_CTYPE=C to process text byte-by-byte.
+            local i ch hexch LC_CTYPE=C
+            for ((i = 1; i <= ${#PWD}; ++i)); do
+                ch="$PWD[i]"
+                if [[ "$ch" =~ [/._~A-Za-z0-9-] ]]; then
+                    URL_PATH+="$ch"
+                else
+                    hexch=$(printf "%02X" "'$ch")
+                    URL_PATH+="%$hexch"
+                fi
+            done
+        }
+        local PWD_URL="file://$HOST$URL_PATH"
+        printf '\e]7;%s\a' "$PWD_URL"
+    fi
 }
 
 # from pure zsh prompt
 prompt_pure_set_title() {
-  setopt localoptions noshwordsplit
+    setopt localoptions noshwordsplit
 
-  # emacs terminal does not support settings the title
-  (( ${+EMACS} )) && return
+    # emacs terminal does not support settings the title
+    (( ${+EMACS} )) && return
 
-  case $TTY in
-    # Don't set title over serial console.
-    /dev/ttyS[0-9]*) return;;
-  esac
+    case $TTY in
+        # Don't set title over serial console.
+        /dev/ttyS[0-9]*) return;;
+    esac
 
-  # tell the terminal we are setting the title
-  print -n '\e]0;'
-  # show hostname if connected through ssh
-  [[ -n $SSH_CONNECTION ]] && print -Pn '(%m) '
-  case $1 in
-    expand-prompt)
-      print -Pn $2;;
-    ignore-escape)
-      print -rn $2;;
-  esac
-  # end set title
-  print -n '\a'
+    # tell the terminal we are setting the title
+    print -n '\e]0;'
+    # show hostname if connected through ssh
+    [[ -n $SSH_CONNECTION ]] && print -Pn '(%m) '
+    case $1 in
+        expand-prompt)
+            print -Pn $2;;
+        ignore-escape)
+            print -rn $2;;
+    esac
+    # end set title
+    print -n '\a'
 }
 
 function prompt_zl_precmd {
-  setopt LOCAL_OPTIONS
-  unsetopt XTRACE KSH_ARRAYS
+    setopt LOCAL_OPTIONS
+    unsetopt XTRACE KSH_ARRAYS
 
-  update_terminal_cwd
+    _prompt_zl_pwd=$(prompt-pwd)
 
-  prompt_pure_set_title 'ignore-escape' "$2"
+    update_terminal_cwd
+
+    prompt_pure_set_title 'ignore-escape' "$2"
 }
 
 function prompt_zl_setup {
-  setopt LOCAL_OPTIONS
-  unsetopt XTRACE KSH_ARRAYS
-  prompt_opts=(cr percent sp subst)
+    setopt LOCAL_OPTIONS
+    unsetopt XTRACE KSH_ARRAYS
+    prompt_opts=(cr percent sp subst)
 
-  # Load required functions.
-  autoload -Uz add-zsh-hook
+    # Load required functions.
+    autoload -Uz add-zsh-hook
 
-  # Add hook for calling git-info before each command.
-  add-zsh-hook precmd prompt_zl_precmd
+    # Add hook for calling git-info before each command.
+    add-zsh-hook precmd prompt_zl_precmd
 
-  # Define prompts.
-  PROMPT='%B%F{8}%(4~|%-1~/.../%1~|%~)%f%b%(!.%(?:%F{5}#%f:%F{1}#%f).%(?:%F{5}%%%f:%F{1}%%%f)) '
-  SPROMPT='zsh: correct %F{1}%R%f to %F{2}%r%f [nyae]? '
+    # Define prompts.
+    # PROMPT='%B%F{8}%(4~|%-1~/.../%1~|%~)%f%b%(!.%(?:%F{5}#%f:%F{1}#%f).%(?:%F{5}>%f:%F{1}>%f)) '
+    # PROMPT='%n@%m %B%F{8}${_prompt_zl_pwd}%f%b%(!.%(?:%F{5}#%f:%F{1}#%f).%(?:%F{5}λ%f:%F{1}λ%f)) '
+    PROMPT='%B%F{8}${_prompt_zl_pwd}%f%b %(!.%(?:%B%F{5}#%f%b:%B%F{1}#%f%b).%(?:%B%F{5}λ%f%b:%B%F{1}λ%f%b)) '
+    SPROMPT='zsh: correct %F{1}%R%f to %F{2}%r%f [nyae]? '
 }
 
 function prompt_zl_preview {
-  local +h PROMPT=''
-  local +h RPROMPT=''
-  local +h SPROMPT=''
+    local +h PROMPT=''
+    local +h RPROMPT=''
+    local +h SPROMPT=''
 
-  editor-info 2> /dev/null
-  prompt_preview_theme 'zl'
+    editor-info 2> /dev/null
+    prompt_preview_theme 'zl'
 }
 
 prompt_zl_setup "$@"
