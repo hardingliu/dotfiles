@@ -98,12 +98,10 @@ function prompt_zl_setup {
     # Load required functions.
     autoload -Uz add-zsh-hook
 
-    # Add hook for calling git-info before each command.
+    # Add hook.
     add-zsh-hook precmd prompt_zl_precmd
 
     # Define prompts.
-    # PROMPT='%B%F{8}%(4~|%-1~/.../%1~|%~)%f%b%(!.%(?:%F{5}#%f:%F{1}#%f).%(?:%F{5}>%f:%F{1}>%f)) '
-    # PROMPT='%n@%m %B%F{8}${_prompt_zl_pwd}%f%b%(!.%(?:%F{5}#%f:%F{1}#%f).%(?:%F{5}λ%f:%F{1}λ%f)) '
     PROMPT='%B%F{8}${_prompt_zl_pwd}%f%b %(!.%(?:%B%F{5}#%f%b:%B%F{1}#%f%b).%(?:%B%F{5}λ%f%b:%B%F{1}λ%f%b)) '
     SPROMPT='zsh: correct %F{1}%R%f to %F{2}%r%f [nyae]? '
 }
