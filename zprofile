@@ -67,6 +67,5 @@ export PATH=$HOME/bin:$PATH
 export GOPATH=$HOME/go
 export JAVA_HOME=$(/usr/libexec/java_home)
 export LSCOLORS="exfxcxdxbxeadaabagacad"
-export LS_COLORS="di=0;34:ln=0;35:so=0;32:pi=0;33:ex=0;31:bd=34;40:cd=33;40:su=30;41:sg=30;46:tw=30;42:ow=30;43"
 
 export PATH="$HOME/.cargo/bin:$PATH"
