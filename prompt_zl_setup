@@ -102,7 +102,7 @@ function prompt_zl_setup {
     add-zsh-hook precmd prompt_zl_precmd
 
     # Define prompts.
-    PROMPT='%B%F{8}${_prompt_zl_pwd}%f%b %(!.%(?:%B%F{5}#%f%b:%B%F{1}#%f%b).%(?:%B%F{5}λ%f%b:%B%F{1}λ%f%b)) '
+    PROMPT='%F{8}${_prompt_zl_pwd}%f %(!.%(?:%B%F{13}#%f%b:%B%F{1}#%f%b).%(?:%B%F{13}$%f%b:%B%F{1}$%f%b)) '
     SPROMPT='zsh: correct %F{1}%R%f to %F{2}%r%f [nyae]? '
 }
 
