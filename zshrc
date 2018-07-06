@@ -12,11 +12,6 @@ fi
 
 # Customize to your needs...
 
-# Use gnu ls
-# alias ls='gls --color=auto --group-directories-first'
-# eval "$(gdircolors $HOME/.dircolors)"
-# unalias sl
-
 # For brew command-not-found
 source /usr/local/Homebrew/Library/Taps/homebrew/homebrew-command-not-found/handler.sh
 
@@ -28,4 +23,4 @@ typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=green'
 ZSH_HIGHLIGHT_STYLES[precommand]='fg=green'
 ZSH_HIGHLIGHT_STYLES[path]=''
-ZSH_HIGHLIGHT_STYLES[comment]='fg=black,bold'
+ZSH_HIGHLIGHT_STYLES[comment]='fg=white,bold'
