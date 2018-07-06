@@ -9,6 +9,6 @@
 [[ -o INTERACTIVE && -t 2 ]] && {
 
 # Print the message.
-lolcat<<-EOF
+<<-EOF
 EOF
 } >&2
