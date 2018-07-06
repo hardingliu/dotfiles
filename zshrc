@@ -13,9 +13,9 @@ fi
 # Customize to your needs...
 
 # Use gnu ls
-alias ls='gls --color=auto --group-directories-first'
-eval "$(gdircolors $HOME/.dircolors)"
-unalias sl
+# alias ls='gls --color=auto --group-directories-first'
+# eval "$(gdircolors $HOME/.dircolors)"
+# unalias sl
 
 # For brew command-not-found
 source /usr/local/Homebrew/Library/Taps/homebrew/homebrew-command-not-found/handler.sh
