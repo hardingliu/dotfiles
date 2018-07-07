@@ -23,4 +23,4 @@ typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=green'
 ZSH_HIGHLIGHT_STYLES[precommand]='fg=green'
 ZSH_HIGHLIGHT_STYLES[path]=''
-ZSH_HIGHLIGHT_STYLES[comment]='fg=white,bold'
+ZSH_HIGHLIGHT_STYLES[comment]='fg=black,bold'
