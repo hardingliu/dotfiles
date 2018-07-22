@@ -4,4 +4,3 @@ set guioptions-=r
 set guioptions+=m
 set guioptions+=T
 set guifont=Monaco:h13
-colorscheme PaperColor
