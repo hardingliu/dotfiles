@@ -50,8 +50,8 @@ set smartcase
 set autoindent
 set smartindent
 set cindent
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 set wrap
 set linebreak
@@ -63,17 +63,12 @@ set clipboard=unnamed
 set t_md=
 syntax on
 
-let g:airline_theme='luna'
-colorscheme molokai
+" colorscheme
+colorscheme PaperColor
 highlight Visual cterm=bold ctermbg=103 ctermfg=16
 
 " remove trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
-
-" let ale use pycodestyle as the python linter
-let g:ale_linters = {
-\   'python': ['pycodestyle'],
-\}
 
 " Put these lines at the very end of your vimrc file, for ale.
 " Load all plugins now.
