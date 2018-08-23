@@ -101,8 +101,11 @@ function prompt_zl_setup {
   # Add hook.
   add-zsh-hook precmd prompt_zl_precmd
 
+  # Set editor parameters
+  # zstyle ':prezto:module:editor:info:completing' format '%B%F{7}...%f%b'
+
   # Define prompts.
-  PROMPT='%B%F{0}${_prompt_zl_pwd}%f%b%(!.%(?:%B%F{5}#%f%b:%B%F{1}#%f%b).%(?:%B%F{5}$%f%b:%B%F{1}$%f%b)) '
+  PROMPT='%B%F{7}[%f%b%B%F{2}%n@%m$f%b %B%F{4}${_prompt_zl_pwd}%f%b%B%F{7}]%f%b%(!.%(?:%B%F{5}#%f%b:%B%F{1}#%f%b).%(?:%B%F{5}$%f%b:%B%F{1}$%f%b)) '
   SPROMPT='zsh: correct %F{1}%R%f to %F{2}%r%f [nyae]? '
 }
 
