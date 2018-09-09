@@ -18,4 +18,3 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS+=(brackets pattern cursor root line regexp)
 ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=white,bg=red')
 typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[path]=''
-
