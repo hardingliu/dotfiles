@@ -27,6 +27,7 @@ zstyle ':prezto:load' pmodule \
   'environment' \
   'directory' \
   'editor' \
+  'gnu-utility' \
   'utility' \
   'completion' \
   'prompt'
