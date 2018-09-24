@@ -67,6 +67,4 @@ export PATH=$HOME/bin:$PATH
 export PATH=$HOME/Library/Python/3.7/bin:$PATH
 export GOPATH=$HOME/go
 export JAVA_HOME=$(/usr/libexec/java_home)
-# export LSCOLORS='exfxcxdxbxafaeabagacad'
 export PATH=$HOME/.cargo/bin:$PATH
-export PATH=/usr/local/opt/go/libexec/bin:$PATH
