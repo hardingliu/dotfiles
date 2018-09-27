@@ -60,12 +60,16 @@ set encoding=utf-8
 set fileencoding=utf-8
 set background=dark
 set clipboard=unnamed
-set termguicolors
 set t_md=
 syntax on
 
 " colorscheme
-colorscheme molokai
+if $TERM_PROGRAM == "iTerm.app"
+  set termguicolors
+  colorscheme molokai
+else
+  colorscheme PaperColor
+endif
 
 " remove trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
