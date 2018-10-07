@@ -66,7 +66,7 @@ syntax on
 " colorscheme
 if $TERM_PROGRAM == "iTerm.app"
   set termguicolors
-  colorscheme molokai
+  colorscheme base16-spacemacs
 else
   colorscheme PaperColor
 endif
