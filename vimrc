@@ -27,8 +27,6 @@ Plug 'altercation/vim-colors-solarized'
 
 Plug 'tomasr/molokai'
 
-Plug 'junegunn/seoul256.vim'
-
 Plug 'chriskempson/base16-vim'
 
 Plug 'NLKNguyen/papercolor-theme'
