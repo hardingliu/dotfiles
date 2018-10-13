@@ -31,6 +31,8 @@ Plug 'chriskempson/base16-vim'
 
 Plug 'NLKNguyen/papercolor-theme'
 
+Plug 'liuchengxu/space-vim-dark'
+
 call plug#end()
 
 " general settings
@@ -64,7 +66,7 @@ syntax on
 " colorscheme
 if $TERM_PROGRAM == "iTerm.app"
   set termguicolors
-  colorscheme molokai
+  colorscheme space-vim-dark
 else
   colorscheme PaperColor
 endif
