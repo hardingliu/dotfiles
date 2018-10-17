@@ -66,7 +66,7 @@ syntax on
 " colorscheme
 if $TERM_PROGRAM == "iTerm.app"
   set termguicolors
-  colorscheme space-vim-dark
+  colorscheme molokai
 else
   colorscheme PaperColor
 endif

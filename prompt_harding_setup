@@ -85,7 +85,7 @@ function prompt_zl_precmd {
 
   _prompt_zl_pwd=$(prompt-pwd)
 
-  update_terminal_cwd
+  # update_terminal_cwd
 
   prompt_pure_set_title 'ignore-escape' "$2"
 }
@@ -102,10 +102,10 @@ function prompt_zl_setup {
   add-zsh-hook precmd prompt_zl_precmd
 
   # Set editor parameters
-  # zstyle ':prezto:module:editor:info:completing' format '%B%F{7}...%f%b'
+  zstyle ':prezto:module:editor:info:completing' format '%B%F{7}...%f%b'
 
   # Define prompts.
-  PROMPT='%(!.%B%F{1}%n%f%b.%B%F{5}%n%f%b) %B%F{4}${_prompt_zl_pwd}%f%b %(!.%B%F{1}#%f%b.%B%F{5}λ%f%b) '
+  PROMPT='%F{7}[%f%(!.%F{1}%n@%m%f.%F{5}%n@%m%f) %B%F{4}${_prompt_zl_pwd}%f%b%F{7}]%f%(!.%B%F{1}#%f%b.%B%F{5}$%f%b) '
   SPROMPT='zsh: correct %F{1}%R%f to %F{2}%r%f [nyae]? '
 }
 
