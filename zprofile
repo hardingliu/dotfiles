@@ -43,7 +43,10 @@ typeset -gU cdpath fpath mailpath path
 
 # Set the list of directories that Zsh searches for programs.
 path=(
-  /usr/local/{bin,sbin}
+  /usr/local/bin
+  /usr/bin
+  /bin
+  /usr/local/sbin
   $path
 )
 
@@ -62,9 +65,5 @@ if (( $#commands[(i)lesspipe(|.sh)] )); then
   export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
 fi
 
-# Added by zongming
-export PATH=$HOME/bin:$PATH
-export PATH=$HOME/Library/Python/3.7/bin:$PATH
-export GOPATH=$HOME/go
 export JAVA_HOME=$(/usr/libexec/java_home)
-export PATH=$HOME/.cargo/bin:$PATH
+export PATH="/Users/harding/miniconda3/bin:$PATH"
