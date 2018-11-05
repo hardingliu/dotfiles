@@ -66,6 +66,6 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS+=(brackets pattern cursor root line)
 ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=black,bg=red')
 typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=green,underline'
-ZSH_HIGHLIGHT_STYLES[precommand]='fg=green,underline'
+ZSH_HIGHLIGHT_STYLES[precommand]='fg=green,bold'
 ZSH_HIGHLIGHT_STYLES[path]=''
 ZSH_HIGHLIGHT_STYLES[comment]='fg=white,bold'
