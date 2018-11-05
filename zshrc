@@ -1,6 +1,7 @@
 fpath=(
   $HOME/.zprompts
   /usr/local/share/zsh-completions
+  /usr/local/share/zsh/site-functions
   $fpath
 )
 
