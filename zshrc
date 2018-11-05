@@ -50,6 +50,7 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' rehash true
 zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' completer _complete _approximate
 zstyle ':completion::complete:*' gain-privileges 1
 zstyle ':completion::complete:*' use-cache on
 zstyle ':completion::complete:*' cache-path "${ZDOTDIR:-$HOME}/.zcompcache"
