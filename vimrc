@@ -21,17 +21,13 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " colorschemes
-Plug 'morhetz/gruvbox'
+Plug 'tomasr/molokai'
 
 Plug 'altercation/vim-colors-solarized'
-
-Plug 'tomasr/molokai'
 
 Plug 'chriskempson/base16-vim'
 
 Plug 'NLKNguyen/papercolor-theme'
-
-Plug 'liuchengxu/space-vim-dark'
 
 call plug#end()
 
