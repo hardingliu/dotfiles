@@ -43,7 +43,8 @@ alias rm="rm -i"
 alias grep="grep --colour=auto"
 alias df="df -H"
 alias d="dirs -v"
-for index ({1..9}) alias "$index"="cd +${index}"; unset index
+alias lldb='PATH="/usr/bin:$PATH" lldb'
+for index ({0..9}) alias "$index"="cd +${index}"; unset index
 
 disable -r time
 
