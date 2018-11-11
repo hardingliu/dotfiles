@@ -1,6 +1,5 @@
 fpath=(
   $HOME/.zsh/prompts
-  $HOME/.zsh/completion
   /usr/local/share/zsh-completions
   $fpath
 )
