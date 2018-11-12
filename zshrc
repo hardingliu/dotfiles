@@ -1,10 +1,13 @@
+# Harding's zshrc
+
+# Set the fpath
 fpath=(
   $HOME/.zsh/prompts
   /usr/local/share/zsh-completions
   $fpath
 )
 
-autoload -Uz compinit promptinit
+autoload -Uz compinit
 _comp_files=(${ZDOTDIR:-$HOME}/.zcompdump(Nm-20))
 if (( $#_comp_files )); then
   compinit -i -C
@@ -13,13 +16,13 @@ else
 fi
 unset _comp_files
 
-promptinit
+autoload -Uz promptinit; promptinit
 prompt harding
 
 #
 # Options
 #
-setopt interactivecomments
+setopt INTERACTIVE_COMMENTS
 setopt COMPLETE_ALIASES
 setopt AUTO_MENU
 setopt AUTO_CD              # Auto changes to a directory without typing cd.
@@ -41,6 +44,7 @@ alias ls="gls --color --group-directories-first"
 alias rm="rm -i"
 alias grep="grep --colour=auto"
 alias df="df -H"
+alias du="du -h"
 alias d="dirs -v"
 alias lldb='PATH="/usr/bin:$PATH" lldb'
 for index ({0..9}) alias "$index"="cd +${index}"; unset index
@@ -50,7 +54,9 @@ disable -r time
 zmodload zsh/terminfo
 zmodload zsh/complist
 
+# Use emacs key bindings
 bindkey -e
+# Use tab-shift to traverse the completion menu reversely
 bindkey -M menuselect '^[[Z' reverse-menu-complete
 
 zstyle ':completion:*' menu select
