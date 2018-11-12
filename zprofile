@@ -61,13 +61,13 @@ path=(
 export LESS='-g -i -M -R -S -w -z-4'
 
 # color less
-export LESS_TERMCAP_mb=$'\E[01;31m'      # Begins blinking.
-export LESS_TERMCAP_md=$'\E[01;31m'      # Begins bold.
+export LESS_TERMCAP_mb=$'\E[01;36m'      # Begins blinking.
+export LESS_TERMCAP_md=$'\E[01;36m'      # Begins bold.
 export LESS_TERMCAP_me=$'\E[0m'          # Ends mode.
 export LESS_TERMCAP_se=$'\E[0m'          # Ends standout-mode.
 export LESS_TERMCAP_so=$'\E[00;47;30m'   # Begins standout-mode.
 export LESS_TERMCAP_ue=$'\E[0m'          # Ends underline.
-export LESS_TERMCAP_us=$'\E[01;32m'      # Begins underline.
+export LESS_TERMCAP_us=$'\E[01;35m'      # Begins underline.
 
 
 # Set the Less input preprocessor.
@@ -76,8 +76,9 @@ if (( $#commands[(i)lesspipe(|.sh)] )); then
   export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
 fi
 
-export JAVA_HOME=$(/usr/libexec/java_home)
-# export PATH="/Users/harding/miniconda3/bin:$PATH"
+export JAVA_HOME="$(/usr/libexec/java_home)"
+export PATH="$(go env GOPATH)/bin:$PATH"
+export PATH="/Users/harding/miniconda3/bin:$PATH"
 
 # pip zsh completion start
 function _pip_completion {
