@@ -42,14 +42,14 @@ typeset -gU cdpath fpath mailpath path
 # )
 
 # Set the list of directories that Zsh searches for programs.
-path=(
-  $HOME/bin
-  /usr/local/bin
-  /usr/bin
-  /bin
-  /usr/local/sbin
-  $path
-)
+#path=(
+#  $HOME/bin
+#  /usr/local/bin
+#  /usr/bin
+#  /bin
+#  /usr/local/sbin
+#  $path
+#)
 
 #
 # Less
@@ -77,8 +77,11 @@ if (( $#commands[(i)lesspipe(|.sh)] )); then
 fi
 
 export JAVA_HOME="$(/usr/libexec/java_home)"
-export PATH="$(go env GOPATH)/bin:$PATH"
-export PATH="/Users/harding/miniconda3/bin:$PATH"
+# for MacPorts
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+export PATH="/Users/harding/Library/Python/3.6/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
+#export MANPATH="/opt/local/share/man:$MANPATH"
 
 # pip zsh completion start
 function _pip_completion {
@@ -89,6 +92,6 @@ function _pip_completion {
              COMP_CWORD=$(( cword-1 )) \
              PIP_AUTO_COMPLETE=1 $words[1] ) )
 }
-compctl -K _pip_completion pip pip2 pip3
+compctl -K _pip_completion pip pip2 pip3 pip-2.7 pip-3.6 pip-3.7
 # pip zsh completion end
 
