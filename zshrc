@@ -1,9 +1,9 @@
 # Harding's zshrc
 
-# Set the fpath
+# set the fpath
 fpath=(
   $HOME/.zsh/prompts
-  /usr/local/share/zsh-completions
+  $HOME/.zsh/completion
   $fpath
 )
 
@@ -20,7 +20,7 @@ autoload -Uz promptinit; promptinit
 prompt harding
 
 #
-# Options
+# options
 #
 setopt INTERACTIVE_COMMENTS
 setopt COMPLETE_ALIASES
@@ -37,8 +37,9 @@ unsetopt CLOBBER            # Do not overwrite existing files with > and >>.
                             # Use >! and >>! to bypass.
 
 #
-# Aliases
+# aliases
 #
+export SHELL=$(which zsh)
 eval $(gdircolors $HOME/.dir_colors)
 alias ls="gls --color --group-directories-first"
 alias rm="rm -i"
@@ -46,7 +47,7 @@ alias grep="grep --colour=auto"
 alias df="df -H"
 alias du="du -h"
 alias d="dirs -v"
-alias lldb='PATH="/usr/bin:$PATH" lldb'
+#alias lldb='PATH="/usr/bin:$PATH" lldb'
 for index ({0..9}) alias "$index"="cd +${index}"; unset index
 
 disable -r time
@@ -54,9 +55,9 @@ disable -r time
 zmodload zsh/terminfo
 zmodload zsh/complist
 
-# Use emacs key bindings
+# use emacs key bindings
 bindkey -e
-# Use tab-shift to traverse the completion menu reversely
+# use tab-shift to traverse the completion menu reversely
 bindkey -M menuselect '^[[Z' reverse-menu-complete
 
 zstyle ':completion:*' menu select
@@ -74,11 +75,11 @@ zstyle ':completion:*:*:kill:*' force-list always
 zstyle ':completion:*:*:kill:*' insert-ids single
 zstyle ':completion::complete:*' gain-privileges 1
 zstyle ':completion::complete:*' use-cache on
-zstyle ':completion::complete:*' cache-path "${ZDOTDIR:-$HOME}/.zcompcache"
+zstyle ':completion::complete:*' cache-path "${ZDOTDIR:-$HOME}/.zsh/cache"
 
 
-# For zsh-syntax-highlighting
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# for zsh-syntax-highlighting
+source $HOME/.zsh/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS+=(brackets pattern cursor root line)
 ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=black,bg=red')
 typeset -A ZSH_HIGHLIGHT_STYLES
