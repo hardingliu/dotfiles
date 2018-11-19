@@ -20,6 +20,14 @@ Plug 'vim-airline/vim-airline'
 
 Plug 'vim-airline/vim-airline-themes'
 
+Plug 'plasticboy/vim-markdown'
+
+Plug 'google/vim-maktaba'
+
+Plug 'google/vim-codefmt'
+
+Plug 'google/vim-glaive'
+
 " Colorschemes
 Plug 'tomasr/molokai'
 
