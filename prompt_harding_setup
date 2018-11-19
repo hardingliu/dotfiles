@@ -115,7 +115,7 @@ function prompt_harding_precmd {
 
   _prompt_harding_pwd=$(prompt_pwd)
 
-  # update_terminal_cwd
+  update_terminal_cwd
 
   prompt_pure_set_title 'ignore-escape' "$2"
 }
