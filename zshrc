@@ -39,7 +39,7 @@ unsetopt CLOBBER            # Do not overwrite existing files with > and >>.
 #
 # aliases
 #
-export SHELL=$(which zsh)
+#export SHELL=$(which zsh)
 eval $(gdircolors $HOME/.dir_colors)
 alias ls="gls --color --group-directories-first"
 alias rm="rm -i"
@@ -68,18 +68,18 @@ zstyle ':completion:*' completer _complete _approximate
 zstyle ':completion:*:match:*' original only
 zstyle ':completion:*:approximate:*' max-errors 1 numeric
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-zstyle ':completion:*:*:*:*:processes' command 'ps -u $LOGNAME -o pid,user,command -w'
-zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;36=0=01'
-zstyle ':completion:*:*:kill:*' menu yes select
-zstyle ':completion:*:*:kill:*' force-list always
-zstyle ':completion:*:*:kill:*' insert-ids single
+#zstyle ':completion:*:*:*:*:processes' command 'ps -u $LOGNAME -o pid,user,command -w'
+#zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;36=0=01'
+#zstyle ':completion:*:*:kill:*' menu yes select
+#zstyle ':completion:*:*:kill:*' force-list always
+#zstyle ':completion:*:*:kill:*' insert-ids single
 zstyle ':completion::complete:*' gain-privileges 1
 zstyle ':completion::complete:*' use-cache on
 zstyle ':completion::complete:*' cache-path "${ZDOTDIR:-$HOME}/.zsh/cache"
 
 
 # for zsh-syntax-highlighting
-source $HOME/.zsh/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS+=(brackets pattern cursor root line)
 ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=black,bg=red')
 typeset -A ZSH_HIGHLIGHT_STYLES
