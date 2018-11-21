@@ -14,8 +14,6 @@ Plug 'jiangmiao/auto-pairs'
 
 Plug 'w0rp/ale'
 
-Plug 'rhysd/vim-clang-format'
-
 Plug 'vim-airline/vim-airline'
 
 Plug 'vim-airline/vim-airline-themes'
