@@ -1,7 +1,7 @@
-" Zongming's vimrc
+" Harding's vimrc
 set nocompatible
 
-" Vim-plug
+" vim-plug
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -18,15 +18,13 @@ Plug 'vim-airline/vim-airline'
 
 Plug 'vim-airline/vim-airline-themes'
 
-Plug 'plasticboy/vim-markdown'
-
 Plug 'google/vim-maktaba'
 
 Plug 'google/vim-codefmt'
 
 Plug 'google/vim-glaive'
 
-" Colorschemes
+" colorschemes
 Plug 'tomasr/molokai'
 
 Plug 'altercation/vim-colors-solarized'
@@ -37,7 +35,7 @@ Plug 'NLKNguyen/papercolor-theme'
 
 call plug#end()
 
-" General settings
+" general settings
 filetype plugin indent on
 set backspace=indent,eol,start
 set laststatus=2
@@ -66,10 +64,10 @@ set t_md=
 set termguicolors
 syntax on
 
-" Colorscheme
+" colorscheme
 colorscheme molokai
 
-" Remove trailing whitespace by pressing F5
+" remove trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 " Put these lines at the very end of your vimrc file, for ale.
