@@ -4,19 +4,13 @@
 fpath=(
   $HOME/.zsh/prompts
   $HOME/.zsh/completion
+  /usr/local/share/zsh-completions
   $fpath
 )
 
-autoload -Uz compinit
-_comp_files=(${ZDOTDIR:-$HOME}/.zcompdump(Nm-20))
-if (( $#_comp_files )); then
-  compinit -i -C
-else
-  compinit -i
-fi
-unset _comp_files
-
-autoload -Uz promptinit; promptinit
+autoload -Uz compinit promptinit
+compinit -C
+promptinit
 prompt harding
 
 #
@@ -40,17 +34,18 @@ unsetopt CLOBBER            # Do not overwrite existing files with > and >>.
 # aliases
 #
 #export SHELL=$(which zsh)
-eval $(gdircolors $HOME/.dir_colors)
-alias ls="gls --color --group-directories-first"
+#eval $(gdircolors $HOME/.dir_colors)
+#alias ls="gls --color --group-directories-first"
+alias ls="ls -FG"
 alias rm="rm -i"
 alias grep="grep --colour=auto"
 alias df="df -H"
 alias du="du -h"
 alias d="dirs -v"
-#alias lldb='PATH="/usr/bin:$PATH" lldb'
+alias type="type -a"
 for index ({0..9}) alias "$index"="cd +${index}"; unset index
 
-disable -r time
+#disable -r time
 
 zmodload zsh/terminfo
 zmodload zsh/complist
@@ -67,7 +62,7 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:
 zstyle ':completion:*' completer _complete _approximate
 zstyle ':completion:*:match:*' original only
 zstyle ':completion:*:approximate:*' max-errors 1 numeric
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+#zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 #zstyle ':completion:*:*:*:*:processes' command 'ps -u $LOGNAME -o pid,user,command -w'
 #zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;36=0=01'
 #zstyle ':completion:*:*:kill:*' menu yes select
@@ -75,15 +70,18 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 #zstyle ':completion:*:*:kill:*' insert-ids single
 zstyle ':completion::complete:*' gain-privileges 1
 zstyle ':completion::complete:*' use-cache on
-zstyle ':completion::complete:*' cache-path "${ZDOTDIR:-$HOME}/.zsh/cache"
-
+zstyle ':completion::complete:*' cache-path "${HOME}/.zsh/cache"
 
 # for zsh-syntax-highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS+=(brackets pattern cursor root line)
 ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=black,bg=red')
 typeset -A ZSH_HIGHLIGHT_STYLES
-ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=cyan,bold'
-ZSH_HIGHLIGHT_STYLES[precommand]='fg=cyan,bold'
+ZSH_HIGHLIGHT_STYLES[arg0]='fg=green'
+ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=yellow'
+ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=cyan'
+ZSH_HIGHLIGHT_STYLES[precommand]='fg=cyan'
 ZSH_HIGHLIGHT_STYLES[path]=''
 ZSH_HIGHLIGHT_STYLES[comment]='fg=white,bold'
+ZSH_HIGHLIGHT_STYLES[globbing]='fg=blue,bold'
+ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=blue,bold'
