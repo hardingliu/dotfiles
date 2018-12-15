@@ -61,8 +61,11 @@ set fileencoding=utf-8
 set background=dark
 set clipboard=unnamed
 set t_md=
-set termguicolors
 syntax on
+
+if $TERM_PROGRAM != 'Apple_Terminal'
+  set termguicolors
+endif
 
 " colorscheme
 colorscheme molokai

@@ -29,6 +29,32 @@
 # 14 bright cyan
 # 15 bright white
 
+#
+# Prompt setup function commonly used by prompt themes.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+function prompt_pwd {
+
+  setopt localoptions extendedglob
+
+  local current_pwd="${PWD/#$HOME/~}"
+  local ret_directory
+
+  if [[ "$current_pwd" == (#m)[/~] ]]; then
+    ret_directory="$MATCH"
+    unset MATCH
+  else
+    ret_directory="${${${${(@j:/:M)${(@s:/:)current_pwd}##.#?}:h}%/}//\%/%%}/${${current_pwd:t}//\%/%%}"
+  fi
+
+  unset current_pwd
+
+  print "$ret_directory"
+
+}
+
 function update_terminal_cwd {
   if [[ "$TERM_PROGRAM" == "Apple_Terminal" ]] && [[ -z "$INSIDE_EMACS" ]]; then
     # Identify the directory using a "file:" scheme URL, including
@@ -83,6 +109,8 @@ function prompt_harding_precmd {
   setopt LOCAL_OPTIONS
   unsetopt XTRACE KSH_ARRAYS
 
+  _prompt_harding_pwd=$(prompt_pwd)
+
   update_terminal_cwd
 
   prompt_pure_set_title 'ignore-escape' "$2"
@@ -100,7 +128,7 @@ function prompt_harding_setup {
   add-zsh-hook precmd prompt_harding_precmd
 
   # Define prompts.
-  PROMPT='%B%F{0}%n@%m:%~%f%b %B%F{5}%#%f%b '
+  PROMPT='%B%F{0}%n@%m:${_prompt_harding_pwd}%f%b %B%F{5}%#%f%b '
 }
 
 function prompt_harding_preview {
