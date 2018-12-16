@@ -16,26 +16,29 @@ prompt harding
 #
 # options
 #
-setopt INTERACTIVE_COMMENTS
-setopt COMPLETE_ALIASES
-setopt AUTO_MENU
 setopt AUTO_CD              # Auto changes to a directory without typing cd.
 setopt AUTO_PUSHD           # Push the old directory onto the stack on cd.
+setopt AUTO_MENU            # Show completion menu on a successive tab press.
+setopt AUTO_LIST            # Automatically list choices on ambiguous completion.
+setopt AUTO_PARAM_SLASH     # If completed parameter is a directory, add a trailing slash.
 setopt PUSHD_IGNORE_DUPS    # Do not store duplicates in the stack.
 setopt PUSHD_SILENT         # Do not print the directory stack after pushd or popd.
 setopt PUSHD_TO_HOME        # Push to home directory when no argument is given.
 setopt CDABLE_VARS          # Change directory to a path stored in a variable.
 setopt MULTIOS              # Write to multiple descriptors.
-setopt EXTENDED_GLOB        # Use extended globbing syntax.
-unsetopt CLOBBER            # Do not overwrite existing files with > and >>.
-                            # Use >! and >>! to bypass.
+setopt NOCLOBBER            # Do not overwrite existing files with > and >>. Use >! and >>! to bypass.
+setopt COMPLETE_IN_WORD     # Complete from both ends of a word.
+setopt ALWAYS_TO_END        # Move cursor to the end of a completed word.
+setopt PATH_DIRS            # Perform path search even on command names with slashes.
+setopt EXTENDED_GLOB        # Needed for file modification glob modifiers with compinit
+setopt INTERACTIVE_COMMENTS # Make comments colorful
+setopt COMPLETE_ALIASES     # Complete aliases
+unsetopt MENU_COMPLETE      # Do not autoselect the first completion entry.
+unsetopt FLOW_CONTROL       # Disable start/stop characters in shell editor.
 
 #
 # aliases
 #
-#export SHELL=$(which zsh)
-#eval $(gdircolors $HOME/.dir_colors)
-#alias ls="gls --color --group-directories-first"
 alias ls="ls -FG"
 alias rm="rm -i"
 alias grep="grep --colour=auto"
@@ -43,10 +46,8 @@ alias df="df -H"
 alias du="du -h"
 alias d="dirs -v"
 alias type="type -a"
-for index ({0..9}) alias "$index"="cd +${index}"; unset index
 
-#disable -r time
-
+# load mods
 zmodload zsh/terminfo
 zmodload zsh/complist
 
@@ -55,22 +56,41 @@ bindkey -e
 # use tab-shift to traverse the completion menu reversely
 bindkey -M menuselect '^[[Z' reverse-menu-complete
 
-zstyle ':completion:*' menu select
+#zstyle ':completion:*' menu select
 zstyle ':completion:*' rehash true
-zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-zstyle ':completion:*' completer _complete _approximate
-zstyle ':completion:*:match:*' original only
-zstyle ':completion:*:approximate:*' max-errors 1 numeric
-#zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-#zstyle ':completion:*:*:*:*:processes' command 'ps -u $LOGNAME -o pid,user,command -w'
-#zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;36=0=01'
-#zstyle ':completion:*:*:kill:*' menu yes select
-#zstyle ':completion:*:*:kill:*' force-list always
-#zstyle ':completion:*:*:kill:*' insert-ids single
-zstyle ':completion::complete:*' gain-privileges 1
+
 zstyle ':completion::complete:*' use-cache on
 zstyle ':completion::complete:*' cache-path "${HOME}/.zsh/cache"
+
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion::complete:*' gain-privileges 1
+
+zstyle ':completion:*:*:*:*:*' menu select
+zstyle ':completion:*:matches' group 'yes'
+zstyle ':completion:*:options' description 'yes'
+zstyle ':completion:*:options' auto-description '%d'
+zstyle ':completion:*:corrections' format ' %F{green}-- %d (errors: %e) --%f'
+zstyle ':completion:*:descriptions' format ' %F{cyan}-- %d --%f'
+zstyle ':completion:*:messages' format ' %F{purple} -- %d --%f'
+zstyle ':completion:*:warnings' format ' %F{red}-- no matches found --%f'
+zstyle ':completion:*:default' list-prompt '%S%M matches%s'
+zstyle ':completion:*' format ' %F{cyan}-- %d --%f'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' verbose yes
+
+zstyle ':completion:*' completer _complete _match _approximate
+zstyle ':completion:*:match:*' original only
+zstyle ':completion:*:approximate:*' max-errors 1 numeric
+
+zstyle ':completion:*:functions' ignored-patterns '(_*|pre(cmd|exec))'
+
+zstyle ':completion:*:*:cd:*' tag-order local-directories directory-stack path-directories
+zstyle ':completion:*:*:cd:*:directory-stack' menu yes select
+zstyle ':completion:*:-tilde-:*' group-order 'named-directories' 'path-directories' 'users' 'expand'
+zstyle ':completion:*' squeeze-slashes true
+
+zstyle ':completion:*:manuals' separate-sections true
+zstyle ':completion:*:manuals.(^1*)' insert-sections true
 
 # for zsh-syntax-highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
