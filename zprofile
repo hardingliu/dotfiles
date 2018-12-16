@@ -66,8 +66,8 @@ if (( $#commands[(i)lesspipe(|.sh)] )); then
   export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
 fi
 
-export JAVA_HOME="$(/usr/libexec/java_home)"
-export LSCOLORS="ExGxCxDxBxfadaabafacad"
+export JAVA_HOME='/Library/Java/JavaVirtualMachines/adoptopenjdk-11.0.1.jdk/Contents/Home'
+export LSCOLORS='ExGxCxDxBxfadaabafacad'
 
 # pip zsh completion start
 function _pip_completion {
