@@ -3,15 +3,19 @@
 # set the fpath
 fpath=(
   $HOME/.zsh/prompts
-  $HOME/.zsh/completion
   /usr/local/share/zsh-completions
   $fpath
 )
 
-autoload -Uz compinit promptinit
-compinit -C
-promptinit
-prompt harding
+# load completion
+autoload -Uz compinit && compinit -C
+
+# load prompt
+autoload -Uz promptinit && promptinit && prompt harding
+
+# load mods
+zmodload zsh/terminfo
+zmodload zsh/complist
 
 #
 # options
@@ -47,24 +51,17 @@ alias du="du -h"
 alias d="dirs -v"
 alias type="type -a"
 
-# load mods
-zmodload zsh/terminfo
-zmodload zsh/complist
-
 # use emacs key bindings
 bindkey -e
 # use tab-shift to traverse the completion menu reversely
 bindkey -M menuselect '^[[Z' reverse-menu-complete
 
-#zstyle ':completion:*' menu select
+# zstyles
 zstyle ':completion:*' rehash true
-
 zstyle ':completion::complete:*' use-cache on
 zstyle ':completion::complete:*' cache-path "${HOME}/.zsh/cache"
-
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 zstyle ':completion::complete:*' gain-privileges 1
-
 zstyle ':completion:*:*:*:*:*' menu select
 zstyle ':completion:*:matches' group 'yes'
 zstyle ':completion:*:options' description 'yes'
@@ -77,20 +74,28 @@ zstyle ':completion:*:default' list-prompt '%S%M matches%s'
 zstyle ':completion:*' format ' %F{cyan}-- %d --%f'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' verbose yes
-
 zstyle ':completion:*' completer _complete _match _approximate
 zstyle ':completion:*:match:*' original only
 zstyle ':completion:*:approximate:*' max-errors 1 numeric
-
 zstyle ':completion:*:functions' ignored-patterns '(_*|pre(cmd|exec))'
-
 zstyle ':completion:*:*:cd:*' tag-order local-directories directory-stack path-directories
 zstyle ':completion:*:*:cd:*:directory-stack' menu yes select
 zstyle ':completion:*:-tilde-:*' group-order 'named-directories' 'path-directories' 'users' 'expand'
 zstyle ':completion:*' squeeze-slashes true
-
 zstyle ':completion:*:manuals' separate-sections true
 zstyle ':completion:*:manuals.(^1*)' insert-sections true
+
+# pip zsh completion start
+function _pip_completion {
+  local words cword
+  read -Ac words
+  read -cn cword
+  reply=( $( COMP_WORDS="$words[*]" \
+             COMP_CWORD=$(( cword-1 )) \
+             PIP_AUTO_COMPLETE=1 $words[1] ) )
+}
+compctl -K _pip_completion pip pip2 pip3
+# pip zsh completion end
 
 # for zsh-syntax-highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

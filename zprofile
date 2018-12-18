@@ -68,15 +68,3 @@ fi
 
 export JAVA_HOME='/Library/Java/JavaVirtualMachines/adoptopenjdk-11.0.1.jdk/Contents/Home'
 export LSCOLORS='ExGxCxDxBxfadaabafacad'
-
-# pip zsh completion start
-function _pip_completion {
-  local words cword
-  read -Ac words
-  read -cn cword
-  reply=( $( COMP_WORDS="$words[*]" \
-             COMP_CWORD=$(( cword-1 )) \
-             PIP_AUTO_COMPLETE=1 $words[1] ) )
-}
-compctl -K _pip_completion pip pip2 pip3 pip-2.7 pip-3.6 pip-3.7
-# pip zsh completion end

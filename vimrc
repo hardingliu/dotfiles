@@ -29,10 +29,6 @@ Plug 'tomasr/molokai'
 
 Plug 'altercation/vim-colors-solarized'
 
-Plug 'chriskempson/base16-vim'
-
-Plug 'NLKNguyen/papercolor-theme'
-
 call plug#end()
 
 " general settings
