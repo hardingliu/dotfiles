@@ -1,7 +1,7 @@
 # Harding's bashrc
 
 # prompt
-export PS1='\[\e]0;\a\]\[\033[01;30m\][\u@\h \w]\[\033[01;35m\]\$\[\033[00m\] '
+export PS1='\[\e]0;\a\]\[\033[01;30m\]\u@\h:\w \[\033[01;35m\]\$\[\033[00m\] '
 export PROMPT_DIRTRIM=3
 
 # environment variables
