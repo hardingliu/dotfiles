@@ -36,7 +36,6 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 function prompt_pwd {
-
   setopt localoptions extendedglob
 
   local current_pwd="${PWD/#$HOME/~}"
@@ -52,7 +51,6 @@ function prompt_pwd {
   unset current_pwd
 
   print "$ret_directory"
-
 }
 
 function update_terminal_cwd {
@@ -128,7 +126,7 @@ function prompt_harding_setup {
   add-zsh-hook precmd prompt_harding_precmd
 
   # Define prompts.
-  PROMPT='%B%F{0}[%n@%m ${_prompt_harding_pwd}]%f%b%B%F{5}%(#.#.$)%f%b '
+  PROMPT='%B%F{0}%n@%m:${_prompt_harding_pwd}%f%b %B%F{6}%#%f%b '
 }
 
 function prompt_harding_preview {
