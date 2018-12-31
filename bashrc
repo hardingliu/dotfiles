@@ -12,8 +12,8 @@ esac
 export PROMPT_DIRTRIM=3
 
 # environment variables
-export PATH=$HOME/bin:/usr/local/sbin:$PATH
-export JAVA_HOME='/Library/Java/JavaVirtualMachines/adoptopenjdk-11.0.1.jdk/Contents/Home'
+export PATH=$HOME/bin:$HOME/Library/Python/3.7/bin:/usr/local/sbin:$PATH
+export JAVA_HOME='/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home' # jdk11 - /Library/Java/JavaVirtualMachines/adoptopenjdk-11.0.1.jdk/Contents/Home
 export LSCOLORS='ExGxCxDxBxfadaabafacad'
 export EDITOR='vim'
 export VISUAL='vim'
@@ -27,6 +27,7 @@ alias grep='grep --colour=auto'
 alias df='df -H'
 alias du='du -h'
 alias type='type -a'
+alias ..='cd ..'
 alias mvim='/Applications/MacVim.app/Contents/bin/mvim'
 
 # bash-completion
