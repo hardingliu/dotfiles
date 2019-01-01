@@ -1,13 +1,13 @@
 # Harding's bashrc
 
 # prompt
-PS1='\[\033[01;30m\][\u@\h \w]\[\033[01;35m\]\$\[\033[00m\] '
+PS1='\[\033[01;30m\]\u@\h:\w \[\033[01;35m\]\$\[\033[00m\] '
 case "$TERM" in
 xterm*|rxvt*)
-    PS1="\[\e]0;\a\]$PS1"
-    ;;
+  PS1="\[\e]0;\a\]$PS1"
+  ;;
 *)
-    ;;
+  ;;
 esac
 export PROMPT_DIRTRIM=3
 
@@ -34,6 +34,11 @@ alias mvim='/Applications/MacVim.app/Contents/bin/mvim'
 if [ -f /usr/local/share/bash-completion/bash_completion ]; then
   . /usr/local/share/bash-completion/bash_completion
 fi
+
+# added by Nix installer
+#if [ -e /Users/harding/.nix-profile/etc/profile.d/nix.sh ]; then
+#  . /Users/harding/.nix-profile/etc/profile.d/nix.sh;
+#fi
 
 # pip bash completion start
 _pip_completion() {
