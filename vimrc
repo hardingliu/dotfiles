@@ -8,6 +8,8 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
 Plug 'leafgarland/typescript-vim'
 
+Plug 'dart-lang/dart-vim-plugin'
+
 Plug 'tpope/vim-fugitive'
 
 Plug 'jiangmiao/auto-pairs'
@@ -61,6 +63,7 @@ set clipboard=unnamed
 set t_md=
 syntax on
 
+" if the terminal running is not Apple's terminal.app, use gui colors
 if $TERM_PROGRAM != 'Apple_Terminal'
   set termguicolors
 endif
