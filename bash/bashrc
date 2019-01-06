@@ -11,8 +11,11 @@ xterm*|rxvt*)
   ;;
 esac
 
-# shopt and set
+# shopt
 shopt -s autocd
+shopt -s direxpand
+
+# set
 set -o noclobber
 
 # environment variables
