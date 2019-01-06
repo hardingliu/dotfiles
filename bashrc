@@ -11,7 +11,7 @@ xterm*|rxvt*)
   ;;
 esac
 
-# options
+# shopt and set
 shopt -s autocd
 set -o noclobber
 
