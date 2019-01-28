@@ -54,6 +54,3 @@ complete -o default -F _pip_completion pip pip2 pip3
 if [ -f /usr/local/share/bash-completion/bash_completion ]; then
   . /usr/local/share/bash-completion/bash_completion
 fi
-
-# added by Nix installer
-# if [ -e /Users/harding/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/harding/.nix-profile/etc/profile.d/nix.sh; fi
