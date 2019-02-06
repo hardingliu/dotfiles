@@ -50,6 +50,7 @@ alias df="df -H"
 alias du="du -h"
 alias d="dirs -v"
 alias type="type -a"
+alias mvim="/Applications/MacVim.app/Contents/bin/mvim"
 
 # use emacs key bindings
 bindkey -e
@@ -103,10 +104,10 @@ if [[ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]
   ZSH_HIGHLIGHT_HIGHLIGHTERS+=(brackets pattern cursor root line)
   ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=black,bg=red')
   typeset -A ZSH_HIGHLIGHT_STYLES
-  ZSH_HIGHLIGHT_STYLES[arg0]='fg=green'
-  ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=yellow'
-  ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=cyan'
-  ZSH_HIGHLIGHT_STYLES[precommand]='fg=cyan'
+  ZSH_HIGHLIGHT_STYLES[arg0]='fg=magenta,bold'
+  ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=yellow,bold'
+  ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=cyan,bold'
+  ZSH_HIGHLIGHT_STYLES[precommand]='fg=cyan,bold'
   ZSH_HIGHLIGHT_STYLES[path]=''
   ZSH_HIGHLIGHT_STYLES[comment]='fg=white,bold'
   ZSH_HIGHLIGHT_STYLES[globbing]='fg=blue,bold'

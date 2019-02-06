@@ -27,6 +27,8 @@ Plug 'google/vim-codefmt'
 Plug 'google/vim-glaive'
 
 " colorschemes
+Plug 'google/vim-colorscheme-primary'
+
 Plug 'tomasr/molokai'
 
 Plug 'altercation/vim-colors-solarized'
@@ -63,12 +65,8 @@ set clipboard=unnamed
 set t_md=
 syntax on
 
-" if the terminal running is not Apple's terminal.app, use gui colors
-if $TERM_PROGRAM != 'Apple_Terminal'
-  set termguicolors
-endif
-
 " colorscheme
+set termguicolors
 colorscheme jellybeans
 
 " remove trailing whitespace by pressing F5

@@ -22,7 +22,7 @@ set -o noclobber
 export PROMPT_DIRTRIM=2
 export PATH=$HOME/bin:$HOME/Library/Python/3.7/bin:/usr/local/sbin:$PATH
 export JAVA_HOME='/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home' # jdk11 - /Library/Java/JavaVirtualMachines/adoptopenjdk-11.0.1.jdk/Contents/Home
-export LSCOLORS='ExFxCxDxBxgadaabagacad'
+export LSCOLORS='ExGxFxDxBxgadaabagacad'
 export EDITOR='vim'
 export VISUAL='vim'
 export PAGER='less'
@@ -51,6 +51,5 @@ complete -o default -F _pip_completion pip pip2 pip3
 # pip bash completion end
 
 # bash-completion
-if [ -f /usr/local/share/bash-completion/bash_completion ]; then
-  . /usr/local/share/bash-completion/bash_completion
-fi
+export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
