@@ -31,8 +31,6 @@ Plug 'google/vim-colorscheme-primary'
 
 Plug 'tomasr/molokai'
 
-Plug 'altercation/vim-colors-solarized'
-
 Plug 'nanotech/jellybeans.vim'
 
 call plug#end()
@@ -67,7 +65,7 @@ syntax on
 
 " colorscheme
 set termguicolors
-colorscheme jellybeans
+colorscheme molokai
 
 " remove trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
