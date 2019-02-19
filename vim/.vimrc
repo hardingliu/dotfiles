@@ -33,6 +33,10 @@ Plug 'tomasr/molokai'
 
 Plug 'nanotech/jellybeans.vim'
 
+Plug 'altercation/vim-colors-solarized'
+
+Plug 'chriskempson/base16-vim'
+
 call plug#end()
 
 " general settings

@@ -60,7 +60,7 @@ bindkey -M menuselect '^[[Z' reverse-menu-complete
 # zstyles
 zstyle ':completion:*' rehash true
 zstyle ':completion::complete:*' use-cache on
-zstyle ':completion::complete:*' cache-path "${HOME}/.zsh/cache"
+zstyle ':completion::complete:*' cache-path "${HOME}/.cache/zsh"
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 zstyle ':completion::complete:*' gain-privileges 1
 zstyle ':completion:*:*:*:*:*' menu select
