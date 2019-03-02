@@ -126,7 +126,7 @@ function prompt_harding_setup {
   add-zsh-hook precmd prompt_harding_precmd
 
   # Define prompts.
-  PROMPT='%B%F{2}%n@%m%f%b:%B%F{4}${_prompt_harding_pwd}%f%b%# '
+  PROMPT='%B%F{5}%n@%m%f%b:%B%F{4}${_prompt_harding_pwd}%f%b%# '
 }
 
 function prompt_harding_preview {

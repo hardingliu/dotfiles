@@ -37,6 +37,8 @@ Plug 'altercation/vim-colors-solarized'
 
 Plug 'jnurmine/Zenburn'
 
+Plug 'morhetz/gruvbox'
+
 call plug#end()
 
 " general settings
