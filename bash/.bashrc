@@ -21,7 +21,7 @@ set -o noclobber
 # environment variables
 export PROMPT_DIRTRIM=2
 export PATH=$HOME/bin:$HOME/Library/Python/3.7/bin:/usr/local/sbin:$PATH
-export JAVA_HOME='/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home' # jdk11 - /Library/Java/JavaVirtualMachines/adoptopenjdk-11.0.1.jdk/Contents/Home
+export JAVA_HOME='/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home'
 export LSCOLORS='ExGxFxDxBxgadaabagacad'
 export EDITOR='vim'
 export VISUAL='vim'
