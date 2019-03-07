@@ -31,13 +31,13 @@ Plug 'google/vim-colorscheme-primary'
 
 Plug 'tomasr/molokai'
 
-Plug 'nanotech/jellybeans.vim'
-
 Plug 'altercation/vim-colors-solarized'
 
 Plug 'jnurmine/Zenburn'
 
-Plug 'morhetz/gruvbox'
+Plug 'danielwe/base16-vim'
+
+Plug 'chriskempson/vim-tomorrow-theme'
 
 call plug#end()
 
@@ -71,7 +71,7 @@ syntax on
 
 " colorscheme
 set termguicolors
-colorscheme zenburn
+colorscheme Tomorrow-Night-Bright
 
 " remove trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
