@@ -39,6 +39,10 @@ Plug 'danielwe/base16-vim'
 
 Plug 'chriskempson/vim-tomorrow-theme'
 
+Plug 'itchyny/landscape.vim'
+
+Plug 'nanotech/jellybeans.vim'
+
 call plug#end()
 
 " general settings
@@ -71,7 +75,7 @@ syntax on
 
 " colorscheme
 set termguicolors
-colorscheme Tomorrow-Night-Bright
+colorscheme jellybeans
 
 " remove trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
