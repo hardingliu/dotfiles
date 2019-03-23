@@ -26,6 +26,8 @@ Plug 'google/vim-codefmt'
 
 Plug 'google/vim-glaive'
 
+Plug 'sheerun/vim-polyglot'
+
 " colorschemes
 Plug 'google/vim-colorscheme-primary'
 
@@ -42,6 +44,10 @@ Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'itchyny/landscape.vim'
 
 Plug 'nanotech/jellybeans.vim'
+
+Plug 'joshdick/onedark.vim'
+
+Plug 'vim-scripts/darkspectrum'
 
 call plug#end()
 
@@ -74,8 +80,9 @@ set t_md=
 syntax on
 
 " colorscheme
-set termguicolors
-colorscheme jellybeans
+"set termguicolors
+"colorscheme molokai
+colorscheme primary
 
 " remove trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
