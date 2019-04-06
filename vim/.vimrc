@@ -29,25 +29,11 @@ Plug 'google/vim-glaive'
 Plug 'sheerun/vim-polyglot'
 
 " colorschemes
-Plug 'google/vim-colorscheme-primary'
-
 Plug 'tomasr/molokai'
-
-Plug 'altercation/vim-colors-solarized'
 
 Plug 'jnurmine/Zenburn'
 
-Plug 'danielwe/base16-vim'
-
-Plug 'chriskempson/vim-tomorrow-theme'
-
-Plug 'itchyny/landscape.vim'
-
 Plug 'nanotech/jellybeans.vim'
-
-Plug 'joshdick/onedark.vim'
-
-Plug 'vim-scripts/darkspectrum'
 
 call plug#end()
 
