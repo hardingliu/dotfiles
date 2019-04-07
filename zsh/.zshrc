@@ -103,4 +103,11 @@ if [[ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]
   source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   ZSH_HIGHLIGHT_HIGHLIGHTERS+=(brackets pattern cursor root line)
   ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=black,bg=red')
+  ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=cyan,underline'
+  ZSH_HIGHLIGHT_STYLES[precommand]='fg=cyan,underline'
+  ZSH_HIGHLIGHT_STYLES[arg0]='fg=cyan'
+  ZSH_HIGHLIGHT_STYLES[rc-quote]='fg=green'
+  ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]='fg=green'
+  ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]='fg=green'
+  ZSH_HIGHLIGHT_STYLES[back-dollar-quoted-argument]='fg=green'
 fi
