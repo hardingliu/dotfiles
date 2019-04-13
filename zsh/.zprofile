@@ -49,7 +49,7 @@ path=(
   /usr/bin
   /bin
   /usr/local/sbin
-    $path
+  $path
 )
 
 #
