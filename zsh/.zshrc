@@ -103,4 +103,11 @@ compctl -K _pip_completion pip pip2 pip3
 if [[ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
   source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   ZSH_HIGHLIGHT_HIGHLIGHTERS+=(brackets pattern cursor root line)
+  ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=cyan,underline,bold'
+  ZSH_HIGHLIGHT_STYLES[precommand]='fg=cyan,underline,bold'
+  ZSH_HIGHLIGHT_STYLES[arg0]='fg=cyan,bold'
+  ZSH_HIGHLIGHT_STYLES[rc-quote]='fg=green'
+  ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]='fg=green'
+  ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]='fg=green'
+  ZSH_HIGHLIGHT_STYLES[back-dollar-quoted-argument]='fg=green'
 fi
