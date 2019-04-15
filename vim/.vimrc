@@ -31,10 +31,6 @@ Plug 'sheerun/vim-polyglot'
 " colorschemes
 Plug 'tomasr/molokai'
 
-Plug 'jnurmine/Zenburn'
-
-Plug 'nanotech/jellybeans.vim'
-
 call plug#end()
 
 " general settings
