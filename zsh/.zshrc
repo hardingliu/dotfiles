@@ -52,6 +52,7 @@ alias d="dirs -v"
 for index ({1..9}) alias "$index"="cd +${index}"; unset index
 alias type="type -a"
 alias mvim="/Applications/MacVim.app/Contents/bin/mvim"
+alias gvim="/Applications/MacVim.app/Contents/bin/gvim"
 
 # use emacs key bindings
 bindkey -e
