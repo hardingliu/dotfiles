@@ -21,8 +21,8 @@ set -o noclobber
 # environment variables
 export PROMPT_DIRTRIM=2
 export PATH=$HOME/bin:$HOME/Library/Python/3.7/bin:/usr/local/sbin:$PATH
-export JAVA_HOME='/Library/Java/JavaVirtualMachines/openjdk-11.0.2.jdk/Contents/Home'
-export LSCOLORS='ExFxGxDxBxafaeabagacad'
+export JAVA_HOME=`/usr/libexec/java_home`
+export LSCOLORS='ExFxGxDxBxacadabaeafag'
 export EDITOR='vim'
 export VISUAL='vim'
 export PAGER='less'
@@ -40,6 +40,7 @@ alias type='type -a'
 alias d='dirs -v'
 alias ..='cd ..'
 alias mvim='/Applications/MacVim.app/Contents/bin/mvim'
+alias gvim='/Applications/MacVim.app/Contents/bin/gvim'
 
 # pip bash completion start
 _pip_completion() {
