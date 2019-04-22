@@ -7,7 +7,7 @@
 # Screenshots:
 #   http://i.imgur.com/nrGV6pg.png
 #
-# Modified by Harding Liu <zongmingxliu@gmail.com>
+# Modified by Zongming Liu <zongmingxliu@gmail.com>
 
 #
 # 16 Terminal Colors
@@ -103,18 +103,18 @@ prompt_pure_set_title() {
   print -n '\a'
 }
 
-function prompt_harding_precmd {
+function prompt_zongming_precmd {
   setopt LOCAL_OPTIONS
   unsetopt XTRACE KSH_ARRAYS
 
-  _prompt_harding_pwd=$(prompt_pwd)
+  _prompt_zongming_pwd=$(prompt_pwd)
 
   update_terminal_cwd
 
   prompt_pure_set_title 'ignore-escape' "$2"
 }
 
-function prompt_harding_setup {
+function prompt_zongming_setup {
   setopt LOCAL_OPTIONS
   unsetopt XTRACE KSH_ARRAYS
   prompt_opts=(cr percent sp subst)
@@ -123,19 +123,19 @@ function prompt_harding_setup {
   autoload -Uz add-zsh-hook
 
   # Add hook.
-  add-zsh-hook precmd prompt_harding_precmd
+  add-zsh-hook precmd prompt_zongming_precmd
 
   # Define prompts.
-  PROMPT='%B%F{0}[%n@%m ${_prompt_harding_pwd}]%f%b%(!.%B%F{1}#%f%b.%B%F{5}$%b%f) '
+  PROMPT='%n@%m %F{2}${_prompt_zongming_pwd}%f%(!.#.>) '
 }
 
-function prompt_harding_preview {
+function prompt_zongming_preview {
   local +h PROMPT=''
   local +h RPROMPT=''
   local +h SPROMPT=''
 
   editor-info 2> /dev/null
-  prompt_preview_theme 'harding'
+  prompt_preview_theme 'zongming'
 }
 
-prompt_harding_setup "$@"
+prompt_zongming_setup "$@"

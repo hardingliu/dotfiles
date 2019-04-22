@@ -11,7 +11,7 @@ fpath=(
 autoload -Uz compinit && compinit -C
 
 # load prompt
-autoload -Uz promptinit && promptinit && prompt harding
+autoload -Uz promptinit && promptinit && prompt zongming
 
 # load mods
 zmodload zsh/terminfo
