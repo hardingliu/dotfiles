@@ -27,19 +27,7 @@ Plug 'google/vim-glaive'
 Plug 'sheerun/vim-polyglot'
 
 " colorschemes
-Plug 'tomasr/molokai'
-
-Plug 'NLKNguyen/papercolor-theme'
-
-Plug 'ayu-theme/ayu-vim'
-
-Plug 'danielwe/base16-vim'
-
-Plug 'blueshirts/darcula'
-
-Plug 'altercation/vim-colors-solarized'
-
-Plug 'lifepillar/vim-solarized8'
+Plug 'romainl/flattened'
 
 call plug#end()
 
@@ -75,10 +63,7 @@ syntax on
 if $TERM_PROGRAM != 'Apple_Terminal'
   set termguicolors
 endif
-" let ayucolor="dark"   " for dark version of theme
-" colorscheme ayu
-" colorscheme base16-spacemacs
-colorscheme solarized8
+colorscheme flattened_light
 
 " remove trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
