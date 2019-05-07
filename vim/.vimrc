@@ -54,16 +54,17 @@ set linebreak
 set nolist
 set encoding=utf-8
 set fileencoding=utf-8
-set background=light
 set clipboard=unnamed
 set t_md=
 syntax on
 
 " colorscheme
-if $TERM_PROGRAM != 'Apple_Terminal'
+if $TERM_PROGRAM == 'Apple_Terminal'
+  colorscheme morning
+else
   set termguicolors
+  colorscheme zellner
 endif
-colorscheme flattened_light
 
 " remove trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
