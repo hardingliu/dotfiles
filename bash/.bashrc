@@ -22,7 +22,7 @@ set -o noclobber
 export PROMPT_DIRTRIM=2
 export PATH=$HOME/bin:$HOME/Library/Python/3.7/bin:/usr/local/sbin:$PATH
 export JAVA_HOME=`/usr/libexec/java_home`
-export LSCOLORS='ExFxGxDxBxacadabaeafag'
+export LSCOLORS='ExFxGxDxBxHcHdHbHeHfHg'
 export EDITOR='vim'
 export VISUAL='vim'
 export PAGER='less'

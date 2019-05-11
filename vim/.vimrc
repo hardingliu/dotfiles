@@ -26,9 +26,6 @@ Plug 'google/vim-glaive'
 
 Plug 'sheerun/vim-polyglot'
 
-" colorschemes
-Plug 'romainl/flattened'
-
 call plug#end()
 
 " general settings
