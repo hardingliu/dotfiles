@@ -1,7 +1,7 @@
 # Harding's bashrc
 
 # prompt
-PS1='\[\033[01;32m\][\u@\h \w]\$ \[\033[00m\]'
+PS1='\[\033[01;36m\][\u@\h \w]\$ \[\033[00m\]'
 
 case "$TERM" in
 xterm*|rxvt*)
@@ -22,7 +22,7 @@ set -o noclobber
 export PROMPT_DIRTRIM=2
 export PATH=$HOME/bin:$HOME/Library/Python/3.7/bin:/usr/local/sbin:$PATH
 export JAVA_HOME=`/usr/libexec/java_home`
-export LSCOLORS='ExFxGxDxBxHcHdHbHeHfHg'
+export LSCOLORS='ExFxCxDxBxHcHdHbHeHfHg'
 export EDITOR='vim'
 export VISUAL='vim'
 export PAGER='less'

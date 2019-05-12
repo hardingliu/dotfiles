@@ -26,6 +26,10 @@ Plug 'google/vim-glaive'
 
 Plug 'sheerun/vim-polyglot'
 
+Plug 'junegunn/seoul256.vim'
+
+Plug 'morhetz/gruvbox'
+
 call plug#end()
 
 " general settings
@@ -53,15 +57,15 @@ set encoding=utf-8
 set fileencoding=utf-8
 set clipboard=unnamed
 set t_md=
-syntax on
+syntax enable
 
 " colorscheme
-if $TERM_PROGRAM == 'Apple_Terminal'
-  colorscheme morning
-else
+if $TERM_PROGRAM != 'Apple_Terminal'
   set termguicolors
-  colorscheme zellner
 endif
+set background=light
+let g:gruvbox_contrast_light='hard'
+colorscheme gruvbox
 
 " remove trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
