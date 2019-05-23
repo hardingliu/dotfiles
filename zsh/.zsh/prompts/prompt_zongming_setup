@@ -126,7 +126,7 @@ function prompt_zongming_setup {
   add-zsh-hook precmd prompt_zongming_precmd
 
   # Define prompts.
-  PROMPT='%B%F{5}%n@%m ${_prompt_zongming_pwd} %#%f%b '
+  PROMPT='%B%F{5}%n@%m:${_prompt_zongming_pwd}%#%f%b '
 }
 
 function prompt_zongming_preview {
