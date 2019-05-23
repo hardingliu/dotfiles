@@ -26,8 +26,6 @@ Plug 'google/vim-glaive'
 
 Plug 'sheerun/vim-polyglot'
 
-Plug 'junegunn/seoul256.vim'
-
 Plug 'morhetz/gruvbox'
 
 call plug#end()
@@ -63,8 +61,8 @@ syntax enable
 if $TERM_PROGRAM != 'Apple_Terminal'
   set termguicolors
 endif
-set background=light
-let g:gruvbox_contrast_light='hard'
+set background=dark
+let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
 
 " remove trailing whitespace by pressing F5
