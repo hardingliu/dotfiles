@@ -30,6 +30,10 @@ Plug 'tomasr/molokai'
 
 Plug 'chriskempson/vim-tomorrow-theme'
 
+Plug 'ayu-theme/ayu-vim'
+
+Plug 'NLKNguyen/papercolor-theme'
+
 call plug#end()
 
 " general settings
@@ -64,9 +68,7 @@ if $TERM_PROGRAM != 'Apple_Terminal'
   set termguicolors
 endif
 set background=dark
-" let g:molokai_original = 1
-" colorscheme molokai
-colorscheme Tomorrow-Night-Bright
+colorscheme PaperColor
 
 " remove trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
