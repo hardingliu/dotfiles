@@ -1,7 +1,7 @@
 # Harding's bashrc
 
 # prompt
-PS1='\[\033[01;36m\]\u@\h:\w\$ \[\033[00m\]'
+PS1='\[\033[01;35m\]\u@\h:\w\$ \[\033[00m\]'
 
 case "$TERM" in
 xterm*|rxvt*)

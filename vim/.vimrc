@@ -26,7 +26,9 @@ Plug 'google/vim-glaive'
 
 Plug 'sheerun/vim-polyglot'
 
-Plug 'morhetz/gruvbox'
+Plug 'tomasr/molokai'
+
+Plug 'chriskempson/vim-tomorrow-theme'
 
 call plug#end()
 
@@ -62,8 +64,9 @@ if $TERM_PROGRAM != 'Apple_Terminal'
   set termguicolors
 endif
 set background=dark
-let g:gruvbox_contrast_dark='hard'
-colorscheme gruvbox
+" let g:molokai_original = 1
+" colorscheme molokai
+colorscheme Tomorrow-Night-Bright
 
 " remove trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
