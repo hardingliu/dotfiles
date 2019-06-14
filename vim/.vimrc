@@ -30,6 +30,8 @@ Plug 'tomasr/molokai'
 
 Plug 'junegunn/seoul256.vim'
 
+Plug 'altercation/vim-colors-solarized'
+
 call plug#end()
 
 " general settings
@@ -59,13 +61,8 @@ set clipboard=unnamed
 set t_md=
 syntax enable
 
-" colorscheme
-" if $TERM_PROGRAM != 'Apple_Terminal'
-"   set termguicolors
-" endif
 set background=dark
-let g:seoul256_background = 233
-colo seoul256
+colo solarized
 
 " remove trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>

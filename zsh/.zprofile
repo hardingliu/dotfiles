@@ -65,4 +65,4 @@ if (( $#commands[(i)lesspipe(|.sh)] )); then
 fi
 
 export JAVA_HOME=$(/usr/libexec/java_home --version 1.8)
-export LSCOLORS='ExGxCxDxBxacaeabhbagad'
+export LSCOLORS='ExGxCxDxBxAfAeAbAcAgAd'
