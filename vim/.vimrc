@@ -60,11 +60,11 @@ set t_md=
 syntax enable
 
 " colorscheme
-if $TERM_PROGRAM != 'Apple_Terminal'
-  set termguicolors
-endif
+" if $TERM_PROGRAM != 'Apple_Terminal'
+"   set termguicolors
+" endif
 set background=dark
-let g:seoul256_background = 234
+let g:seoul256_background = 233
 colo seoul256
 
 " remove trailing whitespace by pressing F5

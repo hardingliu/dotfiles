@@ -59,7 +59,7 @@ SAVEHIST=10000                   # The maximum number of events to save in the h
 #
 # aliases
 #
-alias ls="ls -FG"
+alias ls="ls -G"
 alias rm="rm -i"
 alias grep="grep --colour=auto"
 alias df="df -H"
@@ -138,5 +138,3 @@ if [[ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]
   ZSH_HIGHLIGHT_STYLES[back-dollar-quoted-argument]='fg=cyan,bold'
   ZSH_HIGHLIGHT_STYLES[path]='none'
 fi
-
-
