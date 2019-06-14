@@ -557,7 +557,7 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>80 193 592 584 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 36 1280 741 0 0 1280 800 </string>
+	<string>0 36 1280 741 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>45 0 1235 777 0 0 1280 777 </string>
 	<key>NeverWarnAboutShortLivedSessions_F838023B-EE86-4F79-BD12-66D71120E531</key>
@@ -1252,7 +1252,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>FiraMono-Regular 14</string>
+			<string>FiraCode-Retina 14</string>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Place Prompt at First Column</key>
@@ -1368,7 +1368,7 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1280, 800}}</string>
 		<key>topLeft</key>
-		<string>{215, 549}</string>
+		<string>{215, 588}</string>
 	</dict>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
