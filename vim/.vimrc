@@ -28,11 +28,7 @@ Plug 'sheerun/vim-polyglot'
 
 Plug 'tomasr/molokai'
 
-Plug 'chriskempson/vim-tomorrow-theme'
-
-Plug 'ayu-theme/ayu-vim'
-
-Plug 'NLKNguyen/papercolor-theme'
+Plug 'junegunn/seoul256.vim'
 
 call plug#end()
 
@@ -68,7 +64,8 @@ if $TERM_PROGRAM != 'Apple_Terminal'
   set termguicolors
 endif
 set background=dark
-colorscheme PaperColor
+let g:seoul256_background = 234
+colo seoul256
 
 " remove trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>

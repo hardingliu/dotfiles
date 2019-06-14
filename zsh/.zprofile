@@ -44,10 +44,7 @@ typeset -gU cdpath fpath mailpath path
 # Set the list of directories that Zsh searches for programs.
 path=(
   $HOME/bin
-  /Users/zongming/Library/Python/3.7/bin
   /usr/local/bin
-  /usr/bin
-  /bin
   /usr/local/sbin
   $path
 )
@@ -67,5 +64,5 @@ if (( $#commands[(i)lesspipe(|.sh)] )); then
   export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
 fi
 
-export JAVA_HOME=`/usr/libexec/java_home`
-export LSCOLORS='ExGxCxDxBxagadHbHeHgHc'
+export JAVA_HOME='/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home'
+export LSCOLORS='ExFxGxDxBxAfAeAbHbAgAd'

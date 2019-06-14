@@ -3,4 +3,4 @@ set guioptions-=L
 set guioptions-=r
 set guioptions+=m
 set guioptions+=T
-set guifont=SF\ Mono:h13
+set guifont=Fira\ Mono:h14
