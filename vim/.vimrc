@@ -26,11 +26,24 @@ Plug 'google/vim-glaive'
 
 Plug 'sheerun/vim-polyglot'
 
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+
+" colors
 Plug 'tomasr/molokai'
 
 Plug 'junegunn/seoul256.vim'
 
 Plug 'altercation/vim-colors-solarized'
+
+Plug 'nightsense/snow'
+
+Plug 'w0ng/vim-hybrid'
+
+Plug 'nanotech/jellybeans.vim'
+
+Plug 'NLKNguyen/papercolor-theme'
+
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 
@@ -61,8 +74,10 @@ set clipboard=unnamed
 set t_md=
 syntax enable
 
+set termguicolors
 set background=dark
-colo solarized
+let g:gruvbox_contrast_dark = 'hard'
+colorscheme gruvbox
 
 " remove trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
