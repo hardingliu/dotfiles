@@ -8,7 +8,7 @@ fpath=(
 )
 
 # load completion
-autoload -Uz compinit && compinit -C
+autoload -Uz compinit && compinit -i
 
 # load prompt
 autoload -Uz promptinit && promptinit && prompt zongming
@@ -66,8 +66,6 @@ alias df="df -H"
 alias du="du -h"
 alias d="dirs -v"
 alias type="type -a"
-alias mvim="/Applications/MacVim.app/Contents/bin/mvim"
-alias gvim="/Applications/MacVim.app/Contents/bin/gvim"
 
 # use emacs key bindings
 bindkey -e
@@ -114,26 +112,3 @@ function _pip_completion {
 }
 compctl -K _pip_completion pip pip2 pip3
 # pip zsh completion end
-
-# for zsh-syntax-highlighting
-if [[ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
-  source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-  ZSH_HIGHLIGHT_HIGHLIGHTERS+=(brackets pattern cursor root line)
-  ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=green,bold,underline'
-  ZSH_HIGHLIGHT_STYLES[precommand]='fg=green,bold,underline'
-  ZSH_HIGHLIGHT_STYLES[arg0]='fg=green,bold'
-  ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=yellow,bold'
-  ZSH_HIGHLIGHT_STYLES[globbing]='fg=blue,bold'
-  ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=blue,bold'
-  ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter]='fg=magenta,bold'
-  ZSH_HIGHLIGHT_STYLES[process-substitution-delimiter]='fg=magenta,bold'
-  ZSH_HIGHLIGHT_STYLES[back-quoted-argument-delimiter]='fg=magenta,bold'
-  ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=yellow,bold'
-  ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=yellow,bold'
-  ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]='fg=yellow,bold'
-  ZSH_HIGHLIGHT_STYLES[rc-quote]='fg=cyan,bold'
-  ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]='fg=cyan,bold'
-  ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]='fg=cyan,bold'
-  ZSH_HIGHLIGHT_STYLES[back-dollar-quoted-argument]='fg=cyan,bold'
-  ZSH_HIGHLIGHT_STYLES[path]='none'
-fi

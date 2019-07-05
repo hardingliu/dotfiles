@@ -35,8 +35,6 @@ Plug 'junegunn/seoul256.vim'
 
 Plug 'altercation/vim-colors-solarized'
 
-Plug 'nightsense/snow'
-
 Plug 'w0ng/vim-hybrid'
 
 Plug 'nanotech/jellybeans.vim'
@@ -44,6 +42,8 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'NLKNguyen/papercolor-theme'
 
 Plug 'morhetz/gruvbox'
+
+Plug 'google/vim-colorscheme-primary'
 
 call plug#end()
 
@@ -74,10 +74,12 @@ set clipboard=unnamed
 set t_md=
 syntax enable
 
-set termguicolors
+if $TERM_PROGRAM == "iTerm.app"
+  set termguicolors
+endif
+let g:molokai_original = 1
 set background=dark
-let g:gruvbox_contrast_dark = 'hard'
-colorscheme gruvbox
+colorscheme molokai
 
 " remove trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
