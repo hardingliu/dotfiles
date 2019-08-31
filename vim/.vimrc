@@ -45,6 +45,8 @@ Plug 'morhetz/gruvbox'
 
 Plug 'google/vim-colorscheme-primary'
 
+Plug 'jnurmine/Zenburn'
+
 call plug#end()
 
 " general settings
@@ -74,12 +76,12 @@ set clipboard=unnamed
 set t_md=
 syntax enable
 
+set background=dark
+colorscheme molokai
+
 if $TERM_PROGRAM == "iTerm.app"
   set termguicolors
 endif
-let g:molokai_original = 1
-set background=dark
-colorscheme molokai
 
 " remove trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
