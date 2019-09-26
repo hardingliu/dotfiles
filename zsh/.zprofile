@@ -64,8 +64,9 @@ if (( $#commands[(i)lesspipe(|.sh)] )); then
   export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
 fi
 
-export JAVA_HOME=$(/usr/libexec/java_home --version 1.8)
+export JAVA_HOME=$(/usr/libexec/java_home)
 export LSCOLORS='ExGxCxDxBxafaeabacagad'
+export LS_COLORS='di=1;34:ln=1;36:so=1;32:pi=1;33:ex=1;31:bd=30;45:cd=30;44:su=30;41:sg=30;42:tw=30;46:ow=30;43'
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
