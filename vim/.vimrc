@@ -4,6 +4,8 @@ set nocompatible
 " vim-plug
 call plug#begin('~/.vim/plugged')
 
+Plug 'OmniSharp/OmniSharp-vim'
+
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
 Plug 'leafgarland/typescript-vim'
@@ -50,7 +52,7 @@ Plug 'jnurmine/Zenburn'
 call plug#end()
 
 " general settings
-filetype plugin indent on
+filetype indent plugin on
 set backspace=indent,eol,start
 set laststatus=2
 set showcmd
@@ -64,8 +66,8 @@ set smartcase
 set autoindent
 set smartindent
 set cindent
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set expandtab
 set wrap
 set linebreak
@@ -76,12 +78,15 @@ set clipboard=unnamed
 set t_md=
 syntax enable
 
+set termguicolors
 set background=dark
-colorscheme molokai
+colorscheme gruvbox
 
-if $TERM_PROGRAM == "iTerm.app"
-  set termguicolors
-endif
+" <C-x><C-o>
+let g:OmniSharp_server_stdio = 1
+let g:OmniSharp_timeout = 5
+set completeopt=longest,menuone,preview
+let g:ale_linters = { 'cs': ['OmniSharp'] }
 
 " remove trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
