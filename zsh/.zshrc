@@ -59,7 +59,8 @@ SAVEHIST=10000                   # The maximum number of events to save in the h
 #
 # aliases
 #
-alias ls="ls -FG"
+#alias ls="ls -FG"
+alias ls="gls --color=auto --group-directories-first --classify"
 alias rm="rm -i"
 alias grep="grep --colour=auto"
 alias df="df -H"
