@@ -49,6 +49,8 @@ Plug 'google/vim-colorscheme-primary'
 
 Plug 'jnurmine/Zenburn'
 
+Plug 'vimwiki/vimwiki'
+
 call plug#end()
 
 " general settings
@@ -76,17 +78,27 @@ set encoding=utf-8
 set fileencoding=utf-8
 set clipboard=unnamed
 set t_md=
-syntax enable
+syntax on
 
-set termguicolors
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
 set background=dark
+" colorscheme primary
+" colorscheme PaperColor
 colorscheme gruvbox
+let g:gruvbox_contrast_dark = 'hard'
 
 " <C-x><C-o>
 let g:OmniSharp_server_stdio = 1
 let g:OmniSharp_timeout = 5
 set completeopt=longest,menuone,preview
 let g:ale_linters = { 'cs': ['OmniSharp'] }
+
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
 
 " remove trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>

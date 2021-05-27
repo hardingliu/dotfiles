@@ -53,3 +53,5 @@ _pip_completion() {
                  PIP_AUTO_COMPLETE=1 $1 ) )
 }
 complete -o default -F _pip_completion pip pip2 pip3
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

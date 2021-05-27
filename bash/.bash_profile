@@ -16,3 +16,7 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/zongming/.sdkman"
+[[ -s "/Users/zongming/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/zongming/.sdkman/bin/sdkman-init.sh"
